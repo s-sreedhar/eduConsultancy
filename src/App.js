@@ -16,7 +16,7 @@ import ReactCountryFlag from "react-country-flag"
 import Home from "./components/Home";
 import BackToTopIcon from "./utilities/BackToTopIcon";
 import RegistrationForm from "./utilities/RegistrationForm";
-import FloatingDemo from "./utilities/FloatingDemo";
+// import FloatingDemo from "./utilities/FloatingDemo";
 import Footer from './components/Footer'
 import About from "./components/About";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -36,55 +36,39 @@ const App = () => {
     setShowForm(!showForm);
   };
 
+    // const countries = [
+    //   {
+    //     name: "USA",
+    //     description: "Click to explore facts and university / study options.",
+    //     details:
+    //       "The USA offers world-class education, modern campuses, and diverse opportunities for international students.",
+    //     mapColor: "text-blue-500",
+    //   },
+    //   {
+    //     name: "UK",
+    //     description: "Click to explore facts and university / study options.",
+    //     details:
+    //       "The UK offers a rich cultural history, prestigious universities, and globally recognized qualifications.",
+    //     mapColor: "text-blue-500",
+    //   },
+    //   {
+    //     name: "Europe",
+    //     description: "Click to explore facts and university / study options.",
+    //     details:
+    //       "Europe is home to many ancient universities and offers affordable education with a wide variety of programs.",
+    //     mapColor: "text-blue-500",
+    //   },
+    //   {
+    //     name: "Australia",
+    //     description: "Click to explore facts and university / study options.",
+    //     details:
+    //       "Australia promotes innovation, creativity, and independent thinking throughout its universities.",
+    //     mapColor: "text-blue-600",
+    //   },
+    // ];
   
-    const countries = [
-      {
-        name: "USA",
-        description: "Click to explore facts and university / study options.",
-        details:
-          "The USA offers world-class education, modern campuses, and diverse opportunities for international students.",
-        mapColor: "text-blue-500",
-      },
-      {
-        name: "Canada",
-        description: "Click to explore facts and university / study options.",
-        details:
-          "Canada is known for its high-quality education, welcoming atmosphere, and excellent research facilities.",
-        mapColor: "text-blue-500",
-      },
-      {
-        name: "UK",
-        description: "Click to explore facts and university / study options.",
-        details:
-          "The UK offers a rich cultural history, prestigious universities, and globally recognized qualifications.",
-        mapColor: "text-blue-500",
-      },
-      {
-        name: "Europe",
-        description: "Click to explore facts and university / study options.",
-        details:
-          "Europe is home to many ancient universities and offers affordable education with a wide variety of programs.",
-        mapColor: "text-blue-500",
-      },
-      {
-        name: "Asia",
-        description: "Click to explore facts and university / study options.",
-        details:
-          "Asia provides a unique blend of traditional values and modern education with rapidly growing institutions.",
-        mapColor: "text-blue-500",
-      },
-      {
-        name: "Australia",
-        description: "Click to explore facts and university / study options.",
-        details:
-          "Australia promotes innovation, creativity, and independent thinking throughout its universities.",
-        mapColor: "text-blue-600",
-      },
-    ];
-  
-    const [selectedCountry, setSelectedCountry] = useState(countries[1]);
-    
-
+    const [selectedCountry, setSelectedCountry] = useState("USA");
+    console.log("THe line 71 data is", selectedCountry)
   return (
     <>
     <header className="flex items-center justify-between p-4 bg-white shadow-md sticky top-0 z-10">
@@ -101,10 +85,10 @@ const App = () => {
     <nav className="hidden md:flex space-x-6 text-black-700 relative">
        {/* Main Link */}
        <div className="group relative">
-            <a href="/education" className="flex items-center hover:text-blue-500"> 
+            <p href="/" className="flex items-center hover:text-blue-500"> 
             <span>Overseas Education</span> 
             <MdKeyboardArrowDown className="ml-1" /> 
-          </a>
+          </p>
 
           {/* Dropdown Menu */}
           <div className="absolute left-0 mt-2 bg-white shadow-lg border rounded-lg opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transform -translate-y-2 transition-all duration-200">
@@ -112,8 +96,13 @@ const App = () => {
 
                  {/* Study in USA */}
                  <a
-                href="/education"
+                href="/us"
                 className="flex items-center space-x-2 hover:text-blue-500"
+                // onClick={(e) => {
+                //   e.preventDefault();
+                //   setSelectedCountry("USA");
+                //   window.location.href = "/education";
+                // }}
               >
                 <ReactCountryFlag countryCode="US"svg style={{width:'70px', height:'40px'}}/>
                 <span>Study in USA</span>
@@ -121,8 +110,13 @@ const App = () => {
 
               {/* Study in UK */}
               <a
-                href="/education"
+                href="/uk"
                 className="flex items-center space-x-2 hover:text-blue-500"
+                // onClick={(e) => {
+                //   e.preventDefault();
+                //   setSelectedCountry("UK");
+                //   window.location.href = "/education";
+                // }}
               >
                 <ReactCountryFlag countryCode="GB" svg style={{width:'70px', height:'40px'}}/>
                 <span>Study in UK</span>
@@ -130,8 +124,13 @@ const App = () => {
 
               {/* Study in Australia */}
               <a
-                href="/education"
+                href="/au"
                 className="flex items-center space-x-2 hover:text-blue-500"
+                // onClick={(e) => {
+                //   e.preventDefault();
+                //   setSelectedCountry("Australia");
+                //   window.location.href = "/education";
+                // }}
               >
                 <ReactCountryFlag countryCode="AU" svg style={{width:'70px', height:'40px'}}/>
                 <span>Study in Australia</span>
@@ -139,8 +138,13 @@ const App = () => {
 
                  {/* Study in Europe*/}
                  <a
-                href="/education"
+                href="/eu"
                 className="flex items-center space-x-2 hover:text-blue-500"
+                // onClick={(e) => {
+                //   e.preventDefault();
+                //   setSelectedCountry("Europe");
+                //   window.location.href = "/education";
+                // }}
               >
                 <ReactCountryFlag countryCode="EU" svg style={{width:'70px', height:'40px'}}/>
                 <span>Study in Europe</span>
@@ -149,10 +153,10 @@ const App = () => {
           </div>
         </div>
         <div className="group relative">
-        <a href="/learning" className="flex items-center hover:text-blue-500"> 
+        <p className="flex items-center hover:text-blue-500"> 
             <span>Learning Prep</span> 
             <MdKeyboardArrowDown className="ml-1" /> 
-          </a>
+          </p>
 
        {/* Dropdown Menu */}
        <div className="absolute left-0 mt-2 bg-white shadow-lg border rounded-lg opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transform -translate-y-2 transition-all duration-200">
@@ -279,8 +283,8 @@ const App = () => {
               <FaPhoneAlt size={20} style={{marginTop:'3px'}}/>
             </div>
             {/* Tooltip */}
-            <div className="absolute top-full mt-2 left-[-60%] transform translate-x-[-50%] px-3 py-1 bg-gray-700 text-white text-sm rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-              7997222217
+            <div className="absolute top-full mt-2 left-[-80%] transform translate-x-[-60%] px-3 py-1 bg-gray-700 text-white text-sm rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+              +91 79972 22217
             </div>
           </div>
     </nav>
@@ -296,7 +300,10 @@ const App = () => {
      {/* Routes Definition */}
      <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/education" element={<Education />} />
+        <Route path="/us" element={<Education country="USA"/>} />
+        <Route path="/uk" element={<Education country="UK"/>} />
+        <Route path="/au" element={<Education country="Australia"/>} />
+        <Route path="/eu" element={<Education country="Europe"/>} />
         <Route path="/ielts" element={<IELTSPage/>} />
         <Route path="/gmat" element={<GMATPage/>} />
         <Route path="/gre" element={<GREPage/>} />

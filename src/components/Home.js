@@ -1,4 +1,4 @@
-import {React, useState, useEffect} from "react";
+import {React, useState} from "react";
 import { useNavigate } from 'react-router-dom';
 import globe from '../assets/globe.png'
 import { ReactTyped } from "react-typed";
@@ -23,9 +23,9 @@ import kentstateuniversity from '../assets/kentstateuniversity.png'
 import paceuniversity from '../assets/paceuniversity.png'
 import saintlouisuniversity from '../assets/saintlouisuniversity.png'
 import stateuniversityofnewyork from '../assets/stateuniversityofnewyork.png'
-import newjerseyinstituteoftechnology from '../assets/newjerseyinstituteoftechnology.png'
+// import newjerseyinstituteoftechnology from '../assets/newjerseyinstituteoftechnology.png'
 import stevensinstituteoftechnology from '../assets/stevensinstituteoftechnology.png'
-import universityofnorthtexas from '../assets/universityofnorthtexas.png'
+// import universityofnorthtexas from '../assets/universityofnorthtexas.png'
 import universityoftexasatarlington from '../assets/universityoftexasatarlington.png'
 import statueofliberty from '../assets/statueofliberty.png'
 import bigben from '../assets/bigben.png'
@@ -58,32 +58,46 @@ const Home = () => {
       { name: "Duolingo", image: duolingo },
       { name: "PTE", image: pearsonpte }
     ];
+  
     const universities = [
-      [kentstateuniversity, paceuniversity, saintlouisuniversity, newjerseyinstituteoftechnology],
-      [stevensinstituteoftechnology , universityoftexasatarlington, universityofnorthtexas, stateuniversityofnewyork],
-      [caltech, conventryuniversity, northumbriauniversity, demontfortuniversity],
-      [middlesexuniversity, universityofeastlondon, birminghamuniversity, universityofroehampton, universityofgreenwhich]
+      [
+        { image: kentstateuniversity, name: "Kent State University" },
+        { image: paceuniversity, name: "Pace University" },
+        { image: saintlouisuniversity, name: "Saint Louis University" },
+        { image: stevensinstituteoftechnology, name: "Stevens Institute of Technology" },
+        { image: universityoftexasatarlington, name: "University of Texas at Arlington" },
+        { image: stateuniversityofnewyork, name: "State University of New York" },
+        { image: caltech, name: "California Institute of Technology (Caltech)" },
+        { image: universityofgreenwhich, name: "University of Greenwich" },
+        { image: conventryuniversity, name: "Coventry University" },
+        { image: demontfortuniversity, name: "De Montfort University" },
+        { image: northumbriauniversity, name: "Northumbria University" },
+        { image: universityofeastlondon, name: "University of East London" },
+        { image: birminghamuniversity, name: "University of Birmingham" },
+        { image: middlesexuniversity, name: "Middlesex University" },
+        { image: universityofroehampton, name: "University of Roehampton" }
+      ]
     ];
-    
-    const [currentSlide, setCurrentSlide] = useState(0);
+
+    // const [currentSlide, setCurrentSlide] = useState(0);
 
   // Auto-slide functionality
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % universities.length);
-    }, 3000); // Change slides every 3 seconds
-    return () => clearInterval(interval);
-  }, [universities.length]);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrentSlide((prevSlide) => (prevSlide + 1) % universities.length);
+  //   }, 3000); // Change slides every 3 seconds
+  //   return () => clearInterval(interval);
+  // }, [universities.length]);
 
-  const handlePrev = () => {
-    setCurrentSlide(
-      (prevSlide) => (prevSlide - 1 + universities.length) % universities.length
-    );
-  };
+  // const handlePrev = () => {
+  //   setCurrentSlide(
+  //     (prevSlide) => (prevSlide - 1 + universities.length) % universities.length
+  //   );
+  // };
 
-  const handleNext = () => {
-    setCurrentSlide((prevSlide) => (prevSlide + 1) % universities.length);
-  };
+  // const handleNext = () => {
+  //   setCurrentSlide((prevSlide) => (prevSlide + 1) % universities.length);
+  // };
 
   const countries = [
     {
@@ -114,6 +128,7 @@ const Home = () => {
         <img
           src={globe}
           alt="Education"
+          style={{dislay:'block'}}
           className="absolute inset-0 w-full h-full object-cover"
         //   style={{height:'700px'}}
         />
@@ -159,16 +174,17 @@ const Home = () => {
 
     <section className="flex flex-row items-center justify-between"> 
       <div className="w-1/2"> 
-        <img src={studenthome} alt="Student" className="w-full h-1/6 object-cover"/> 
+      {/* className="w-full h-1/8 object-cover"  */}
+        <img src={studenthome} alt="Student" className="w-full h-1/8 object-cover"/> 
       </div>
       <div className="w-1/2 p-8">
         <h2 className="text-2xl font-bold mb-4">Making Dreams Possible</h2>
         <p className="text-gray-700">Your gateway to global education. We guide you through every step of your study abroad journey, from choosing the right university to securing your visa.</p>
-        <button style={{marginTop : '1.5rem'}}
+        {/* <button style={{marginTop : '1.5rem'}}
       onClick={() => navigate('/about')} 
       className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700">
       Read More
-    </button>
+    </button> */}
       </div>
     </section>
     
@@ -334,7 +350,7 @@ const Home = () => {
       <div className="flex justify-center flex-wrap gap-6">
       {countries.map((country, index) => (
       <div key={index} className="text-center">
-      <img src={country.image} alt={country.name} className="w-24 h-24 mx-auto" />
+      <img src={country.image} alt={country.name} className="w-60 h-60 mx-auto" />
       <p className="text-blue-700 font-medium mt-2">{country.name}</p>
       </div>
       ))}
@@ -344,60 +360,49 @@ const Home = () => {
     <div className="bg-gray-50 py-10">
       <h1 className="text-3xl font-bold text-center mb-4">Discover our Partner Universities</h1>
       <p className="text-center text-gray-600 mb-8">
-        We’ve collaborated with 350+ world-class universities to give wings to your study-abroad dreams.
+      We’ve collaborated with <span className="text-blue-700 text-xl font-bold">1000+</span> world-class universities to give wings to your study-abroad dreams.
       </p>
       <div className="relative max-w-5xl mx-auto">
         {/* Slides */}
-        <div
+        {/* <div
           className="flex transition-transform duration-500"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
           {universities.map((group, index) => (
-            <div key={index} className="flex justify-around min-w-full">
-              {group.map((university, idx) => (
-                <img
-                  key={idx}
-                  src={university}
-                  alt={`University ${idx + 1}`}
-                  // className="h-16 w-auto object-contain"
-                  className="w-24 h-20 mx-auto"
-                />
-              ))}
-            </div>
+          <div key={index} className="flex justify-around">
+          {group.map((university, idx) => (
+          <img
+          key={idx}
+          src={university}
+          alt={`University ${idx + 1}`}
+          className="w-24 h-20 mx-auto object-cover" // Updated class
+          />
           ))}
-        </div>
-
-        {/* Navigation Controls */}
-        <div className="flex items-center justify-center mt-6 space-x-4">
-          {/* Previous Arrow */}
-          <button
-            className="bg-white p-2 shadow-lg rounded-full hover:bg-gray-200"
-            onClick={handlePrev}
-          >
-            &#8592;
-          </button>
-
-          {/* Dots */}
-          <div className="flex space-x-2">
-            {universities.map((_, index) => (
-              <div
-                key={index}
-                className={`h-2 w-2 rounded-full cursor-pointer ${
-                  currentSlide === index ? "bg-blue-500" : "bg-gray-400"
-                }`}
-                onClick={() => setCurrentSlide(index)}
-              ></div>
-            ))}
           </div>
+          ))}
+        </div> */}
 
-          {/* Next Arrow */}
-          <button
-            className="bg-white p-2 shadow-lg rounded-full hover:bg-gray-200"
-            onClick={handleNext}
-          >
-            &#8594;
-          </button>
-        </div>
+<div className="grid grid-cols-5 gap-6 p-6">
+  {universities.flat().map((university, idx) => (
+    <div
+      key={idx}
+      className="relative group flex flex-col items-center"
+    >
+      <img
+        src={university.image}
+        alt={`University ${idx + 1}`}
+        className="w-24 h-20 object-cover rounded-lg"
+      />
+      <div
+        className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg"
+      >
+        <span className="text-white text-sm font-semibold">
+          {university.name}
+        </span>
+      </div>
+    </div>
+  ))}
+</div>    
       </div>
     </div>
 
@@ -424,7 +429,7 @@ const Home = () => {
         ))}
       </div>
       <div className="flex justify-center mt-8">
-        <button className="bg-blue-500 text-white text-lg font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+        <button onClick={handleFormToggle} className="bg-blue-500 text-white text-lg font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition">
           Start Prep Now
         </button>
       </div>

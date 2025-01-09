@@ -1,6 +1,6 @@
 import React from "react";
 import ieltseducation from '../assets/ieltseducation.png'
-import ieltsscorecard from '../assets/ieltsscorecard.png'
+import duolingoscorecard from '../assets/duolingoscorecard.png'
 import { TfiBlackboard } from "react-icons/tfi";
 import { FaChalkboardTeacher } from "react-icons/fa";
 import { TbView360Number } from "react-icons/tb";
@@ -104,7 +104,7 @@ const DuolingoPage = () => {
             measured in band scores. The overall band score is an average of these scores. The band scale ranges from
             non-user (0) to expert (9).
           </p>
-          <img src={ieltsscorecard} alt="Score Chart" className="w-full max-w-md mx-auto" />
+          <img src={duolingoscorecard} alt="Score Chart" className="w-full max-w-md mx-auto" />
         </div>
       </div>
     </div>
@@ -173,13 +173,13 @@ const DuolingoPage = () => {
         </div>
 
         {/* Programs Section */}
-        <h3 className="text-2xl font-bold text-center text-gray-800 mb-8">
+        {/* <h3 className="text-2xl font-bold text-center text-gray-800 mb-8">
           Discover Our Duolingo Programs
-        </h3>
+        </h3> */}
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-6"> */}
           {/* Program Card */}
-          <div className="border rounded-lg p-6 bg-gray-50 shadow-md">
+          {/* <div className="border rounded-lg p-6 bg-gray-50 shadow-md">
             <h4 className="text-xl font-semibold text-red-600 mb-4">Duolingo Online</h4>
             <p className="text-sm text-gray-700 mb-2">Time: 8:30 AM to 9:30 AM</p>
             <p className="text-sm text-gray-700 mb-2">Batch Starts: 01 Jan 2024</p>
@@ -195,10 +195,10 @@ const DuolingoPage = () => {
               <li>Personalized feedback</li>
               <li>50+ full-length mock tests</li>
             </ul>
-          </div>
+          </div> */}
 
           {/* Duplicate Program Card */}
-          <div className="border rounded-lg p-6 bg-gray-50 shadow-md">
+          {/* <div className="border rounded-lg p-6 bg-gray-50 shadow-md">
             <h4 className="text-xl font-semibold text-red-600 mb-4">Duolingo Offline</h4>
             <p className="text-sm text-gray-700 mb-2">Time: 8:30 AM to 9:30 AM</p>
             <p className="text-sm text-gray-700 mb-2">Batch Starts: 01 Jan 2024</p>
@@ -214,10 +214,10 @@ const DuolingoPage = () => {
               <li>Personalized feedback</li>
               <li>50+ full-length mock tests</li>
             </ul>
-          </div>
+          </div> */}
 
           {/* Duplicate Program Card */}
-          <div className="border rounded-lg p-6 bg-gray-50 shadow-md">
+          {/* <div className="border rounded-lg p-6 bg-gray-50 shadow-md">
             <h4 className="text-xl font-semibold text-red-600 mb-4">Duolingo Online</h4>
             <p className="text-sm text-gray-700 mb-2">Time: 8:30 AM to 9:30 AM</p>
             <p className="text-sm text-gray-700 mb-2">Batch Starts: 01 Jan 2024</p>
@@ -233,8 +233,8 @@ const DuolingoPage = () => {
               <li>Personalized feedback</li>
               <li>50+ full-length mock tests</li>
             </ul>
-          </div>
-        </div>
+          </div> */}
+        {/* </div> */}
       </div>
     </section>
     </>

@@ -177,9 +177,9 @@ const IELTSPage = () => {
           Discover Our IELTS Programs
         </h3>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-6"> */}
           {/* Program Card */}
-          <div className="border rounded-lg p-6 bg-gray-50 shadow-md">
+          {/* <div className="border rounded-lg p-6 bg-gray-50 shadow-md">
             <h4 className="text-xl font-semibold text-red-600 mb-4">IELTS Online</h4>
             <p className="text-sm text-gray-700 mb-2">Time: 8:30 AM to 9:30 AM</p>
             <p className="text-sm text-gray-700 mb-2">Batch Starts: 01 Jan 2024</p>
@@ -195,10 +195,10 @@ const IELTSPage = () => {
               <li>Personalized feedback</li>
               <li>50+ full-length mock tests</li>
             </ul>
-          </div>
+          </div> */}
 
           {/* Duplicate Program Card */}
-          <div className="border rounded-lg p-6 bg-gray-50 shadow-md">
+          {/* <div className="border rounded-lg p-6 bg-gray-50 shadow-md">
             <h4 className="text-xl font-semibold text-red-600 mb-4">IELTS Offline</h4>
             <p className="text-sm text-gray-700 mb-2">Time: 8:30 AM to 9:30 AM</p>
             <p className="text-sm text-gray-700 mb-2">Batch Starts: 01 Jan 2024</p>
@@ -214,10 +214,10 @@ const IELTSPage = () => {
               <li>Personalized feedback</li>
               <li>50+ full-length mock tests</li>
             </ul>
-          </div>
+          </div> */}
 
           {/* Duplicate Program Card */}
-          <div className="border rounded-lg p-6 bg-gray-50 shadow-md">
+          {/* <div className="border rounded-lg p-6 bg-gray-50 shadow-md">
             <h4 className="text-xl font-semibold text-red-600 mb-4">IELTS Online</h4>
             <p className="text-sm text-gray-700 mb-2">Time: 8:30 AM to 9:30 AM</p>
             <p className="text-sm text-gray-700 mb-2">Batch Starts: 01 Jan 2024</p>
@@ -233,8 +233,8 @@ const IELTSPage = () => {
               <li>Personalized feedback</li>
               <li>50+ full-length mock tests</li>
             </ul>
-          </div>
-        </div>
+          </div> */}
+        {/* </div> */}
       </div>
     </section>
     </>

@@ -15,8 +15,8 @@ const Footer = () => {
         <div className="mt-4">
           <h3 className="text-sm font-semibold text-white">Stay in Touch</h3>
           <div className="flex space-x-3 mt-2">
-            <a href="#" className="text-xl"><i className="fab fa-facebook"> <FaFacebook/></i></a>   
-            <a href="#" className="text-xl"><i className="fab fa-instagram"><FaInstagram/></i></a>
+            <a href="https://www.facebook.com/share/14vcrfLqX6/?mibextid=wwXIfr" className="text-xl"><i className="fab fa-facebook"> <FaFacebook/></i></a>   
+            <a href="https://www.instagram.com/csoverseasedu?igsh=MW56MG9paTFlNGo2MQ%3D%3D&utm_source=qr" className="text-xl"><i className="fab fa-instagram"><FaInstagram/></i></a>
             {/* <a href="#" className="text-xl"><i className="fab fa-youtube"><FaYoutube/></i></a>
             <a href="#" className="text-xl"><i className="fab fa-linkedin"><FaLinkedin/></i></a>
             <a href="#" className="text-xl"><i className="fab fa-x-twitter"><FaTwitter/></i></a> */}
@@ -47,10 +47,10 @@ const Footer = () => {
           <li><a href="#" className="hover:underline">For Partners</a></li>
           <li><a href="#" className="hover:underline">Life@Valmiki</a></li>
           <li><a href="#" className="hover:underline">Blogs</a></li> */}
-          <li><a href="#" className="hover:underline">Contact Us</a></li>
-          <li><a href="#" className="hover:underline">Feedback</a></li>
-          <li><a href="#" className="hover:underline">Privacy Policy</a></li>
-          <li><a href="#" className="hover:underline">Terms & Conditions</a></li>
+          <li><a href="https://wa.me/7997222217" className="hover:underline">Contact Us</a></li>
+          <li><a href="https://wa.me/7997222217" className="hover:underline">Feedback</a></li>
+          {/* <li><a href="" className="hover:underline">Privacy Policy</a></li> */}
+          {/* <li><a href="#" className="hover:underline">Terms & Conditions</a></li> */}
           {/* <li><a href="#" className="hover:underline">Careers</a></li> */}
         </ul>
       </div>
@@ -58,10 +58,10 @@ const Footer = () => {
       <div>
         <h3 className="text-lg font-bold mb-4">Study Abroad</h3>
         <ul className="text-sm space-y-2">
-          <li><a href="#" className="hover:underline">Study in USA</a></li>
-          <li><a href="#" className="hover:underline">Study in UK</a></li>
-          <li><a href="#" className="hover:underline">Study in Australia</a></li>
-          <li><a href="#" className="hover:underline">Study in Europe</a></li>
+          <li><a href="/us" className="hover:underline">Study in USA</a></li>
+          <li><a href="/uk" className="hover:underline">Study in UK</a></li>
+          <li><a href="/au" className="hover:underline">Study in Australia</a></li>
+          <li><a href="/eu" className="hover:underline">Study in Europe</a></li>
           {/* <li><a href="#" className="hover:underline">Study in Canada</a></li>
           <li><a href="#" className="hover:underline">Study in New Zealand</a></li>
           <li><a href="#" className="hover:underline">Study in Ireland</a></li>
@@ -73,9 +73,9 @@ const Footer = () => {
       <div>
         <h3 className="text-lg font-bold mb-4">Offerings</h3>
         <ul className="text-sm space-y-2">
-          <li><a href="#" className="hover:underline">Overseas Education</a></li>
+          <li><a href="/us" className="hover:underline">Overseas Education</a></li>
           {/* <li><a href="#" className="hover:underline">Immigration</a></li> */}
-          <li><a href="#" className="hover:underline">Learning Prep</a></li>
+          <li><a href="/ielts" className="hover:underline">Learning Prep</a></li>
           {/* <li><a href="#" className="hover:underline">Tours & Travel</a></li> */}
           {/* <li><a href="#" className="hover:underline">EduFairs</a></li> */}
           {/* <li><a href="#" className="hover:underline">Spot Assessment & Seminars</a></li>

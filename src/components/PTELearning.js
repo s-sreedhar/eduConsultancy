@@ -26,42 +26,42 @@ const features = [
   { icon: <FaRegPaperPlane />, title: "Personalized Feedback", text: "Improve performance with tailored guidance." },
 ];
 
-const programs = [
-  {
-    title: "PTE Online",
-    time: "8:30 AM to 9:30 AM",
-    batchStart: "01 Jan 2024",
-    duration: "30 Days",
-    features: [
-      "Certified and experienced faculty",
-      "Grammar practice",
-      "Sentence formation",
-      "Comprehension skills",
-      "Group discussions",
-      "Daily doubt-solving sessions",
-      "Tips and tricks for test prep",
-      "Personalized feedback",
-      "50+ full-length mock tests",
-    ],
-  },
-  {
-    title: "PTE Offline",
-    time: "8:30 AM to 9:30 AM",
-    batchStart: "01 Jan 2024",
-    duration: "30 Days",
-    features: [
-      "Certified and experienced faculty",
-      "Grammar practice",
-      "Sentence formation",
-      "Comprehension skills",
-      "Group discussions",
-      "Daily doubt-solving sessions",
-      "Tips and tricks for test prep",
-      "Personalized feedback",
-      "50+ full-length mock tests",
-    ],
-  },
-];
+// const programs = [
+//   {
+//     title: "PTE Online",
+//     time: "8:30 AM to 9:30 AM",
+//     batchStart: "01 Jan 2024",
+//     duration: "30 Days",
+//     features: [
+//       "Certified and experienced faculty",
+//       "Grammar practice",
+//       "Sentence formation",
+//       "Comprehension skills",
+//       "Group discussions",
+//       "Daily doubt-solving sessions",
+//       "Tips and tricks for test prep",
+//       "Personalized feedback",
+//       "50+ full-length mock tests",
+//     ],
+//   },
+//   {
+//     title: "PTE Offline",
+//     time: "8:30 AM to 9:30 AM",
+//     batchStart: "01 Jan 2024",
+//     duration: "30 Days",
+//     features: [
+//       "Certified and experienced faculty",
+//       "Grammar practice",
+//       "Sentence formation",
+//       "Comprehension skills",
+//       "Group discussions",
+//       "Daily doubt-solving sessions",
+//       "Tips and tricks for test prep",
+//       "Personalized feedback",
+//       "50+ full-length mock tests",
+//     ],
+//   },
+// ];
 
 const PTEPage = () => {
   return (
@@ -152,7 +152,7 @@ const PTEPage = () => {
             </div>
 
             {/* Programs Section */}
-            <h3 className="text-2xl font-bold text-center text-gray-800 mb-8">Discover Our PTE Programs</h3>
+            {/* <h3 className="text-2xl font-bold text-center text-gray-800 mb-8">Discover Our PTE Programs</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {programs.map((program, index) => (
                 <div key={index} className="border rounded-lg p-6 bg-gray-50 shadow-md">
@@ -167,7 +167,7 @@ const PTEPage = () => {
                   </ul>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
         </section>
       </div>
