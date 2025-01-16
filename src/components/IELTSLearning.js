@@ -19,7 +19,7 @@ const IELTSPage = () => {
             <p className="mt-4">
               Trust India's most trusted IELTS mentors to equip you with the knowledge and expertise you need to succeed.
             </p>
-            <button className="mt-6 px-6 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-red-700">
+            <button className="mt-6 px-6 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-red-700" style={{backgroundColor:'#0F3A5E'}}>
               Book FREE Demo Class
             </button>
           </div>
@@ -58,7 +58,7 @@ const IELTSPage = () => {
       </div>
 
       {/* IELTS Exam Structure Section */}
-      <div className="py-12 bg-blue-500 text-white">
+      <div className="py-12 bg-blue-500 text-white" style={{backgroundColor:'#0F3A5E'}}>
         <h2 className="text-center text-3xl font-bold mb-8">IELTS Exam Structure</h2>
         <div className="max-w-4xl mx-auto">
           <table className="w-full table-auto text-left border-collapse">
@@ -173,9 +173,9 @@ const IELTSPage = () => {
         </div>
 
         {/* Programs Section */}
-        <h3 className="text-2xl font-bold text-center text-gray-800 mb-8">
+        {/* <h3 className="text-2xl font-bold text-center text-gray-800 mb-8">
           Discover Our IELTS Programs
-        </h3>
+        </h3> */}
 
         {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-6"> */}
           {/* Program Card */}

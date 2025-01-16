@@ -41,13 +41,13 @@ const FAQ = () => {
     <div className="max-w-4xl mx-auto mt-10">
       <h2 className="text-2xl font-bold mb-6 text-center">Frequently Asked Questions</h2>
       {faqs.map((faq, index) => (
-        <div key={index} className="mb-4 border-b-2 border-blue-500">
+        <div key={index} className="mb-4 border-b-2 border-blue-500" >
           <button
             onClick={() => toggleExpand(index)}
             className="w-full flex justify-between items-center py-2 text-left text-lg font-medium text-gray-800"
           >
             {faq.question}
-            <span className="text-blue-500">{expanded === index ? "-" : "+"}</span>
+            <span className="text-blue-500" style={{color:'#0F3A5E'}}>{expanded === index ? "-" : "+"}</span>
           </button>
           {expanded === index && (
             <div className="mt-2 text-gray-700">

@@ -39,3 +39,10 @@
     transform: rotate(360deg);
   }
 }
+
+.no-select {
+  user-select: none; /* Standard */
+  -webkit-user-select: none; /* WebKit */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+}

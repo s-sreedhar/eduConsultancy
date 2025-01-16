@@ -5,7 +5,7 @@ module.exports = {
   ],
   theme: {
     // colors: {
-    //   prime : '#0F3A5E'
+    //   current : '#0F3A5E'
     // },
     extend: {},
   },

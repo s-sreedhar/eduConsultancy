@@ -1,7 +1,7 @@
-import {  FaFacebook, FaTwitter, FaYoutube, FaInstagram, FaLinkedin, FaGoogle } from "react-icons/fa";
+import {  FaFacebook, FaInstagram, FaGoogle } from "react-icons/fa";
 const Footer = () => {
     return (
-        <footer className="bg-blue-500 text-white py-10">
+        <footer className="bg-blue-500 text-white py-10" style={{backgroundColor:'#0F3A5E'}}>
   <div className="container mx-auto px-4">
     {/* Top Section */}
     <div className="grid grid-cols-1 md:grid-cols-4 gap-8">

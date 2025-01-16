@@ -1,5 +1,5 @@
 import {React, useState} from "react";
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import globe from '../assets/globe.png'
 import { ReactTyped } from "react-typed";
 import RegistrationForm from "../utilities/RegistrationForm";
@@ -43,7 +43,7 @@ import universityofgreenwhich from '../assets/universityofgreenwhich.png'
 import FAQ from '../components/FAQ'
 import Testimonials from "./Testimonials";
 const Home = () => {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const [showForm, setShowForm] = useState(false);
       const handleFormToggle = () => {
@@ -156,7 +156,7 @@ const Home = () => {
           </p>
           <div className="flex space-x-4">
             {/* Join Now Button */}
-            <button className="px-6 py-3 bg-blue-500 rounded-lg text-white font-medium hover:bg-blue-600"
+            <button className="px-6 py-3 bg-blue-500 rounded-lg text-white font-medium hover:bg-blue-600" style={{backgroundColor:'#0F3A5E'}}
             onClick={handleFormToggle}>
               Apply Now
             </button>
@@ -200,7 +200,7 @@ const Home = () => {
         alt="Counselling"
         className="w-full h-full object-cover" 
       />
-      <div className="absolute bottom-0 left-0 right-0 p-4 bg-red-800/50 text-white text-center"> 
+      <div className="absolute bottom-0 left-0 right-0 p-4 bg-red-800/50 text-white text-center" style={{backgroundColor:'#0F3A5E'}}> 
         <p>Counselling</p> 
       </div>
       <div className="absolute inset-0 bg-white flex flex-col items-center justify-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -209,17 +209,17 @@ const Home = () => {
       </div>
     </div>
 
-  <div className="group relative w-full h-56 sm:h-64 md:h-72 lg:h-80 overflow-hidden rounded-lg shadow-lg">
+  <div className="group relative w-full h-56 sm:h-64 md:h-72 lg:h-80 overflow-hidden rounded-lg shadow-lg" >
     <img
       src={testpreparation}
       alt="Test Preparation"
       className="w-full h-full object-cover group-hover:opacity-0 transition-opacity duration-500"
     />
-      <div className="absolute bottom-0 left-0 right-0 p-4 bg-red-800/50 text-white text-center"> 
+      <div className="absolute bottom-0 left-0 right-0 p-4 bg-red-800/50 text-white text-center" style={{backgroundColor:'#0F3A5E'}}> 
         <p>Test Preparation</p> 
       </div>
     <div className="absolute inset-0 bg-white flex flex-col items-center justify-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-      <h3 className="text-lg font-bold text-gray-800">Test Preparation</h3>
+      <h3 className="text-lg font-bold text-gray-800" style={{color:'#0F3A5E'}}>Test Preparation</h3>
       <p className="text-sm text-gray-600 mt-2">Ace your tests with personalized coaching.</p>
     </div>
   </div>
@@ -230,11 +230,11 @@ const Home = () => {
       alt="Course Selection"
       className="w-full h-full object-cover group-hover:opacity-0 transition-opacity duration-500"
     />
-      <div className="absolute bottom-0 left-0 right-0 p-4 bg-red-800/50 text-white text-center"> 
+      <div className="absolute bottom-0 left-0 right-0 p-4 bg-red-800/50 text-white text-center" style={{backgroundColor:'#0F3A5E'}}> 
         <p>Course Selection</p> 
       </div>
     <div className="absolute inset-0 bg-white flex flex-col items-center justify-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-      <h3 className="text-lg font-bold text-gray-800">Course Selection</h3>
+      <h3 className="text-lg font-bold text-gray-800" style={{color:'#0F3A5E'}}>Course Selection</h3>
       <p className="text-sm text-gray-600 mt-2">Find the perfect course for your career.</p>
     </div>
   </div>
@@ -245,11 +245,11 @@ const Home = () => {
       alt="University Selection"
       className="w-full h-full object-cover group-hover:opacity-0 transition-opacity duration-500"
     />
-      <div className="absolute bottom-0 left-0 right-0 p-4 bg-red-800/50 text-white text-center"> 
+      <div className="absolute bottom-0 left-0 right-0 p-4 bg-red-800/50 text-white text-center" style={{backgroundColor:'#0F3A5E'}}> 
         <p>University Selection</p> 
       </div>
     <div className="absolute inset-0 bg-white flex flex-col items-center justify-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-      <h3 className="text-lg font-bold text-gray-800">University Selection</h3>
+      <h3 className="text-lg font-bold text-gray-800" style={{color:'#0F3A5E'}}>University Selection</h3>
       <p className="text-sm text-gray-600 mt-2">Choose the best university for your needs.</p>
     </div>
   </div>
@@ -260,11 +260,11 @@ const Home = () => {
       alt="Visa Assistance"
       className="w-full h-full object-cover group-hover:opacity-0 transition-opacity duration-500"
     />
-      <div className="absolute bottom-0 left-0 right-0 p-4 bg-red-800/50 text-white text-center"> 
+      <div className="absolute bottom-0 left-0 right-0 p-4 bg-red-800/50 text-white text-center" style={{backgroundColor:'#0F3A5E'}}> 
         <p>Visa Assistance</p> 
       </div>
     <div className="absolute inset-0 bg-white flex flex-col items-center justify-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-      <h3 className="text-lg font-bold text-gray-800">Visa Assistance</h3>
+      <h3 className="text-lg font-bold text-gray-800" style={{color:'#0F3A5E'}}>Visa Assistance</h3>
       <p className="text-sm text-gray-600 mt-2">Simplify your visa process with our help.</p>
     </div>
   </div>
@@ -275,11 +275,11 @@ const Home = () => {
       alt="Financial Planning"
       className="w-full h-full object-cover group-hover:opacity-0 transition-opacity duration-500"
     />
-      <div className="absolute bottom-0 left-0 right-0 p-4 bg-red-800/50 text-white text-center"> 
+      <div className="absolute bottom-0 left-0 right-0 p-4 bg-red-800/50 text-white text-center" style={{backgroundColor:'#0F3A5E'}}> 
         <p>Financial Planning</p> 
       </div>
     <div className="absolute inset-0 bg-white flex flex-col items-center justify-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-      <h3 className="text-lg font-bold text-gray-800">Financial Planning</h3>
+      <h3 className="text-lg font-bold text-gray-800" style={{color:'#0F3A5E'}}>Financial Planning</h3>
       <p className="text-sm text-gray-600 mt-2">Plan your finances effectively for study abroad.</p>
     </div>
   </div>
@@ -290,11 +290,11 @@ const Home = () => {
       alt="Accommodation"
       className="w-full h-full object-cover group-hover:opacity-0 transition-opacity duration-500"
     />
-      <div className="absolute bottom-0 left-0 right-0 p-4 bg-red-800/50 text-white text-center"> 
+      <div className="absolute bottom-0 left-0 right-0 p-4 bg-red-800/50 text-white text-center" style={{backgroundColor:'#0F3A5E'}}> 
         <p>Accommodation</p> 
       </div>
     <div className="absolute inset-0 bg-white flex flex-col items-center justify-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-      <h3 className="text-lg font-bold text-gray-800">Accommodation</h3>
+      <h3 className="text-lg font-bold text-gray-800" style={{color:'#0F3A5E'}}>Accommodation</h3>
       <p className="text-sm text-gray-600 mt-2">Find comfortable housing abroad with ease.</p>
     </div>
   </div>
@@ -305,11 +305,11 @@ const Home = () => {
       alt="Post-Arrival Support"
       className="w-full h-full object-cover group-hover:opacity-0 transition-opacity duration-500"
     />
-      <div className="absolute bottom-0 left-0 right-0 p-4 bg-red-800/50 text-white text-center"> 
+      <div className="absolute bottom-0 left-0 right-0 p-4 bg-red-800/50 text-white text-center" style={{backgroundColor:'#0F3A5E'}}> 
         <p>Post-Arrival Support</p> 
       </div>
     <div className="absolute inset-0 bg-white flex flex-col items-center justify-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-      <h3 className="text-lg font-bold text-gray-800">Post-Arrival Support</h3>
+      <h3 className="text-lg font-bold text-gray-800" style={{color:'#0F3A5E'}}>Post-Arrival Support</h3>
       <p className="text-sm text-gray-600 mt-2">Settle in smoothly with our expert guidance.</p>
     </div>
   </div>
@@ -351,7 +351,7 @@ const Home = () => {
       {countries.map((country, index) => (
       <div key={index} className="text-center">
       <img src={country.image} alt={country.name} className="w-60 h-60 mx-auto" />
-      <p className="text-blue-700 font-medium mt-2">{country.name}</p>
+      <p className="text-blue-700 font-medium mt-2" style={{color:'#0F3A5E'}}>{country.name}</p>
       </div>
       ))}
       </div>
@@ -360,7 +360,7 @@ const Home = () => {
     <div className="bg-gray-50 py-10">
       <h1 className="text-3xl font-bold text-center mb-4">Discover our Partner Universities</h1>
       <p className="text-center text-gray-600 mb-8">
-      We’ve collaborated with <span className="text-blue-700 text-xl font-bold">1000+</span> world-class universities to give wings to your study-abroad dreams.
+      We’ve collaborated with <span className="text-blue-700 text-xl font-bold" style={{color:'#0F3A5E'}}>1000+</span> world-class universities to give wings to your study-abroad dreams.
       </p>
       <div className="relative max-w-5xl mx-auto">
         {/* Slides */}
@@ -429,7 +429,7 @@ const Home = () => {
         ))}
       </div>
       <div className="flex justify-center mt-8">
-        <button onClick={handleFormToggle} className="bg-blue-500 text-white text-lg font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+        <button onClick={handleFormToggle} className="bg-blue-500 text-white text-lg font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition" style={{backgroundColor:'#0F3A5E'}}>
           Start Prep Now
         </button>
       </div>

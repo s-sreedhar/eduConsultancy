@@ -19,7 +19,7 @@ const countries = [
     name: "Australia",
     details:
       "Australia is a preferred destination for students seeking quality education in a safe and welcoming environment. Renowned institutions like the University of Melbourne and Australian National University rank among the world’s best. The country offers excellent programs in fields like environmental sciences, healthcare, IT, and engineering. Australian universities emphasize research and practical learning, preparing students for real-world challenges. The country’s post-study work visa options make it easier for students to gain valuable work experience. With a strong economy and multicultural society, Australia provides ample job opportunities. Scholarships and financial aid are available for deserving international students. Australia’s stunning natural landscapes and outdoor lifestyle enhance the overall student experience. The education system focuses on critical thinking and creativity, ensuring holistic development. Known for its high quality of life, Australia is an ideal place to study and live.",
-    mapColor: "text-blue-600",
+    mapColor: "text-blue-500",
     countryCode : 'AU'
   },
   {
@@ -55,7 +55,7 @@ const Education = ({country}) => {
                       className={`w-16 h-16 flex items-center justify-center ${countryMap.mapColor}`}
                     >
                       {/* Replace with actual SVG/Icons for countries */}
-                      <p className="font-bold">{countryMap.name}</p>
+                      <p className="font-bold" style={{color:'#0F3A5E'}}>{countryMap.name}</p>
                     </div>
                     {/* <p className="mt-2 text-center text-gray-700">{country.name}</p> */}
                     <ReactCountryFlag key={countryMap.countryCode} countryCode={countryMap.countryCode} svg style={{ height:'40px', width:'70px'}}/>
@@ -70,7 +70,7 @@ const Education = ({country}) => {
                 selectedCountry ? "opacity-100 scale-100" : "opacity-0 scale-95"
               }`}
             >
-              <h2 className="text-2xl font-bold text-blue-600">{selectedCountry.name}</h2>
+              <h2 className="text-2xl font-bold text-blue-600" style={{color:'#0F3A5E'}}>{selectedCountry.name}</h2>
               {/* <p className="text-sm text-blue-500 mt-2">{selectedCountry.description}</p> */}
               {/* <ReactCountryFlag key={selectedCountry.countryCode} countryCode={selectedCountry.countryCode} svg /> */}
               <p className="text-gray-700 mt-4">{selectedCountry.details}</p>

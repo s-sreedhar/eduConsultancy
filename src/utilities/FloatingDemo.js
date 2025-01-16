@@ -12,7 +12,7 @@ const FloatingDemo = ({ onButtonClick }) => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6"> {/* Adjusted positioning */}
+    <div className="fixed bottom-6 right-6 m-5"> {/* Adjusted positioning */}
       <button
         className={`bg-blue-500 text-white rounded-full p-3 shadow-md hover:bg-blue-600 ${
           isExpanded ? 'hidden' : 'block'

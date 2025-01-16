@@ -1,5 +1,5 @@
 import {React, useState }from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import { FaPhoneAlt } from "react-icons/fa";
 import WhatsAppIcon from "./utilities/WhatsAppIcon";
@@ -7,7 +7,7 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import csoverseaslogo from './assets/csoverseaslogo.png'
 import ielts from './assets/ielts.png'
 import gmatmini from './assets/gmatmini.png'
-import gmat from './assets/gmat.png' 
+// import gmat from './assets/gmat.png' 
 import etsgre from './assets/etsgre.png'
 import etstoefl from './assets/etstoefl.png'
 import duolingo from './assets/duolingo.png'
@@ -67,15 +67,15 @@ const App = () => {
     //   },
     // ];
   
-    const [selectedCountry, setSelectedCountry] = useState("USA");
-    console.log("THe line 71 data is", selectedCountry)
+    // const [selectedCountry, setSelectedCountry] = useState("USA");
+    // console.log("THe line 71 data is", selectedCountry)
   return (
     <>
     <header className="flex items-center justify-between p-4 bg-white shadow-md sticky top-0 z-10">
   {/* Logo */}
   <div className="flex items-center">
   <div className="flex flex-col items-start mr-2"> 
-    <div className="text-xl font-bold text-blue" onClick={() => navigate('/')}>CS Overseas</div>
+    <div className="text-xl font-bold text-blue" onClick={() => navigate('/')} style={{color:'#0F3A5E', pointer:'none'}}>CS Overseas</div>
     <p className="text-xs font-normal">Study Abroad, Shape your Future</p> 
   </div>
   <img src={csoverseaslogo} style={{height:'40px', width:'40px'}} alt="CS Overseas Logo" /> 
@@ -86,7 +86,7 @@ const App = () => {
        {/* Main Link */}
        <div className="group relative">
             <p href="/" className="flex items-center hover:text-blue-500"> 
-            <span>Overseas Education</span> 
+            <span style={{color:'#0F3A5E', fontWeight:'bold'}}>Overseas Education</span> 
             <MdKeyboardArrowDown className="ml-1" /> 
           </p>
 
@@ -105,7 +105,7 @@ const App = () => {
                 // }}
               >
                 <ReactCountryFlag countryCode="US"svg style={{width:'70px', height:'40px'}}/>
-                <span>Study in USA</span>
+                <span style={{color:'#0F3A5E'}}> Study in USA</span>
               </a>
 
               {/* Study in UK */}
@@ -119,7 +119,7 @@ const App = () => {
                 // }}
               >
                 <ReactCountryFlag countryCode="GB" svg style={{width:'70px', height:'40px'}}/>
-                <span>Study in UK</span>
+                <span style={{color:'#0F3A5E'}}>Study in UK</span>
               </a>
 
               {/* Study in Australia */}
@@ -133,7 +133,7 @@ const App = () => {
                 // }}
               >
                 <ReactCountryFlag countryCode="AU" svg style={{width:'70px', height:'40px'}}/>
-                <span>Study in Australia</span>
+                <span style={{color:'#0F3A5E'}}>Study in Australia</span>
               </a>
 
                  {/* Study in Europe*/}
@@ -147,14 +147,14 @@ const App = () => {
                 // }}
               >
                 <ReactCountryFlag countryCode="EU" svg style={{width:'70px', height:'40px'}}/>
-                <span>Study in Europe</span>
+                <span style={{color:'#0F3A5E'}}>Study in Europe</span>
               </a>
             </div>
           </div>
         </div>
         <div className="group relative">
         <p className="flex items-center hover:text-blue-500"> 
-            <span>Learning Prep</span> 
+            <span style={{color:'#0F3A5E', fontWeight:'bold'}}>Learning Prep</span> 
             <MdKeyboardArrowDown className="ml-1" /> 
           </p>
 
@@ -165,13 +165,13 @@ const App = () => {
               <a
                 href="/ielts"
                 className="flex items-center space-x-2 hover:text-blue-500"
-                style={{ height: '40px', width: '70px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                style={{ height: '40px', width: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
               >
                 <img
                   src={ielts}
                   alt="IELTS"
                   // className="w-6 h-6 object-cover rounded-full"
-                  className="w-10 h-9 mx-auto"
+                  className="w-20 h-19 mx-auto"
                 />
                 {/* <span>IELTS</span> */}
               </a>
@@ -180,14 +180,14 @@ const App = () => {
               <a
                 href="/gmat"
                 className="flex items-center space-x-2 hover:text-blue-500"
-                style={{ height: '40px', width: '70px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                style={{ height: '50px', width: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
               >
                 <img
                   src={gmatmini}
 
                   alt="Statue of Liberty"
                   // className="w-6 h-6 object-cover rounded-full"
-                  className="w-14 h-9 mx-auto"
+                  className="w-20 h-20 mx-auto"
                 />
                 {/* <span>GMAT</span> */}
               </a>
@@ -196,7 +196,7 @@ const App = () => {
               <a
                 href="/gre"
                 className="flex items-center space-x-2 hover:text-blue-500"
-                style={{ height: '40px', width: '70px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                style={{ height: '50px', width: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
               >
                 <img
                   src={etsgre}
@@ -212,7 +212,7 @@ const App = () => {
               <a
                 href="/toefl"
                 className="flex items-center space-x-2 hover:text-blue-500"
-                style={{ height: '40px', width: '70px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                style={{ height: '50px', width: '90px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
               >
                 <img
                   src={etstoefl}
@@ -227,13 +227,13 @@ const App = () => {
                <a
                 href="/duolingo"
                 className="flex items-center space-x-2 hover:text-blue-500"
-                style={{ height: '40px', width: '70px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                style={{ height: '40px', width: '90px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
               >
                 <img
                   src={duolingo}
 
                   alt="Statue of Liberty"
-                  className="w-6 h-10 object-cover rounded-full"
+                  className="w-20 h-19 object-cover rounded-full"
                   // className="w-24 h-24 mx-auto"
                 />
                 {/* <span>Duolingo </span> */}
@@ -243,7 +243,7 @@ const App = () => {
                  <a
                 href="/pte"
                 className="flex items-center space-x-2 hover:text-blue-500"
-                style={{ height: '40px', width: '70px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                style={{ height: '50px', width: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
               >
                 <img
                   src={pearsonpte}
@@ -256,18 +256,19 @@ const App = () => {
             </div>
           </div>
       </div>
-      <a href="/services" className="hover:text-blue-500">
+      <a href="/services" className="hover:text-blue-500" style={{color:'#0F3A5E', fontWeight:'bold'}}>
         Services 
       </a>
       {/* <a href="/immigration" className="hover:text-blue-500">
         Immigration
       </a> */}
-      <a href="/about" className="hover:text-blue-500">
+      <a href="/about" className="hover:text-blue-500" style={{color:'#0F3A5E', fontWeight:'bold'}}>
         About Us
       </a>
       <button
             className="hover:text-blue-500"
             onClick={handleFormToggle}
+            style={{color:'#0F3A5E', fontWeight:'bold'}}
           >
             Apply Now
           </button>
@@ -280,10 +281,10 @@ const App = () => {
               {/* <span className="material-icons text-gray-500 cursor-pointer group-hover:text-blue-500">
                 phone
               </span> */}
-              <FaPhoneAlt size={20} style={{marginTop:'3px'}}/>
+              <FaPhoneAlt size={20} style={{marginTop:'3px', color:'#0F3A5E'}}/>
             </div>
             {/* Tooltip */}
-            <div className="absolute top-full mt-2 left-[-80%] transform translate-x-[-60%] px-3 py-1 bg-gray-700 text-white text-sm rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+            <div className="absolute top-full mt-2 left-[-80%] transform translate-x-[-60%] px-3 py-1 bg-gray-700 text-white text-sm rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap" style={{backgroundColor:'#0F3A5E'}}>
               +91 79972 22217
             </div>
           </div>

@@ -8,7 +8,7 @@ const About = () => {
         {/* Left Section: Text Content */}
         <div className="md:w-1/2">
           <h2 className="text-3xl font-bold mb-4">About Us</h2>
-          <p className="text-gray-700 leading-relaxed mb-4">
+          <p className="text-gray-700 leading-relaxed mb-4" >
           At CS Overseas, we are committed to provide services in a transparent, personalized, and
  exceptional way. Our mission is to guide students through every step of their academic journey
  with honesty and integrity.
@@ -42,11 +42,11 @@ const About = () => {
         {/* Statistics */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center mb-12">
           <div>
-            <h3 className="text-4xl font-bold text-blue-600">2023</h3>
+            <h3 className="text-4xl font-bold text-blue-600" style={{color:'#0F3A5E'}}>2023</h3>
             <p className="text-gray-600">Founding Year</p>
           </div>
           <div>
-            <h3 className="text-4xl font-bold text-blue-600">1000+</h3>
+            <h3 className="text-4xl font-bold text-blue-600" style={{color:'#0F3A5E'}}>1000+</h3>
             <p className="text-gray-600">University Partners</p>
           </div>
           {/* <div>

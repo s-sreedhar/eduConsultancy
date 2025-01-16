@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { db, addDoc, collection } from "../firebaseConfig"  // Import Firestore methods
-import { ToastContainer, toast } from 'react-toastify';  // Correct imports for ToastContainer and toast
-import 'react-toastify/dist/ReactToastify.css';  // Import Toastify styles
+import { db, addDoc, collection, serverTimestamp } from "../firebaseConfig"; // Import Firestore methods
+import { ToastContainer, toast } from "react-toastify"; // Correct imports for ToastContainer and toast
+import "react-toastify/dist/ReactToastify.css"; // Import Toastify styles
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
@@ -43,9 +43,17 @@ const RegistrationForm = () => {
     }
 
     try {
+      // Add timestamp to form data
+      const formDataWithTimestamp = {
+        ...formData,
+        submittedAt: serverTimestamp(),
+      };
+
       // Add form data to Firestore
-      const docRef = await addDoc(collection(db, "registrations"), formData);
+      const docRef = await addDoc(collection(db, "registrations"), formDataWithTimestamp);
+      console.log("The submitted form data is", docRef);
       toast.success("Form submitted successfully!");
+
       // Optionally clear form data after successful submission
       setFormData({
         surname: "",
@@ -63,7 +71,7 @@ const RegistrationForm = () => {
   return (
     <>
       <form onSubmit={handleSubmit} className="space-y-4">
-        <h2 className="text-2xl font-bold text-gray-700">Register for more</h2>
+        <h2 className="text-2xl font-bold text-black">Register for more</h2>
 
         {/* Surname */}
         <div>
@@ -148,6 +156,7 @@ const RegistrationForm = () => {
         <button
           type="submit"
           className="w-full bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          style={{ backgroundColor: "#0F3A5E" }}
         >
           Apply
         </button>

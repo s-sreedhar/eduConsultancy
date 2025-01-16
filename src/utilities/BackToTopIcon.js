@@ -29,7 +29,7 @@ const BackToTopIcon = () => {
       }`}
       onClick={scrollToTop}
     >
-      <AiOutlineUp size={20} />
+      <AiOutlineUp size={30} />
     </button>
   );
 };
