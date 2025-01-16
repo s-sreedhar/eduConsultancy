@@ -239,7 +239,7 @@ const App = () => {
             {/* Other Menu Items */}
             <a href="/services" className="block text-black hover:text-blue-500 mt-4" style={{ color: "#0F3A5E", fontWeight:'bold'}}>Services</a>
             <a href="/about" className="block text-black hover:text-blue-500 mt-4" style={{ color: "#0F3A5E" ,fontWeight:'bold'}}>About Us</a>
-            <button className="block text-black hover:text-blue-500 mt-4" style={{ color: "#0F3A5E" ,fontWeight:'bold'}}>Apply Now</button>
+            <button className="block text-black hover:text-blue-500 mt-4" style={{ color: "#0F3A5E" ,fontWeight:'bold'}} onClick={handleFormToggle}>Apply Now</button>
           </div>
         </div>
       </div>
