@@ -36,6 +36,22 @@ const App = () => {
     setShowForm(!showForm);
   };
 
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [overseasMenuOpen, setOverseasMenuOpen] = useState(false);
+  const [learningPrepMenuOpen, setLearningPrepMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const toggleOverseasMenu = () => {
+    setOverseasMenuOpen(!overseasMenuOpen);
+  };
+
+  const toggleLearningPrepMenu = () => {
+    setLearningPrepMenuOpen(!learningPrepMenuOpen);
+  };
+  
     // const countries = [
     //   {
     //     name: "USA",
@@ -80,222 +96,155 @@ const App = () => {
   </div>
   <img src={csoverseaslogo} style={{height:'40px', width:'40px'}} alt="CS Overseas Logo" /> 
 </div>
-
-    {/* Navigation Links */}
-    <nav className="hidden md:flex space-x-6 text-black-700 relative">
-       {/* Main Link */}
-       <div className="group relative">
-            <p href="/" className="flex items-center hover:text-blue-500"> 
-            <span style={{color:'#0F3A5E', fontWeight:'bold'}}>Overseas Education</span> 
-            <MdKeyboardArrowDown className="ml-1" /> 
+<nav className="relative">
+      {/* Desktop Navigation */}
+      <div className="hidden md:flex space-x-6 text-black-700 items-center">
+        {/* Overseas Education */}
+        <div className="group relative">
+          <p className="flex items-center hover:text-blue-500">
+            <span style={{ color: "#0F3A5E", fontWeight: "bold" }}>Overseas Education</span>
+            <MdKeyboardArrowDown className="ml-1" />
           </p>
 
           {/* Dropdown Menu */}
-          <div className="absolute left-0 mt-2 bg-white shadow-lg border rounded-lg opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transform -translate-y-2 transition-all duration-200">
+          <div className="absolute left-0 mt-2 bg-white shadow-lg border rounded-lg opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 -translate-y-2 transition-all duration-200">
             <div className="p-4 space-y-2">
-
-                 {/* Study in USA */}
-                 <a
-                href="/us"
-                className="flex items-center space-x-2 hover:text-blue-500"
-                // onClick={(e) => {
-                //   e.preventDefault();
-                //   setSelectedCountry("USA");
-                //   window.location.href = "/education";
-                // }}
-              >
-                <ReactCountryFlag countryCode="US"svg style={{width:'70px', height:'40px'}}/>
-                <span style={{color:'#0F3A5E'}}> Study in USA</span>
+              <a href="/us" className="flex items-center space-x-2 hover:text-blue-500">
+                <ReactCountryFlag countryCode="US" svg style={{ width: "70px", height: "40px" }} />
+                <span style={{ color: "#0F3A5E" }}>Study in USA</span>
               </a>
-
-              {/* Study in UK */}
-              <a
-                href="/uk"
-                className="flex items-center space-x-2 hover:text-blue-500"
-                // onClick={(e) => {
-                //   e.preventDefault();
-                //   setSelectedCountry("UK");
-                //   window.location.href = "/education";
-                // }}
-              >
-                <ReactCountryFlag countryCode="GB" svg style={{width:'70px', height:'40px'}}/>
-                <span style={{color:'#0F3A5E'}}>Study in UK</span>
+              <a href="/uk" className="flex items-center space-x-2 hover:text-blue-500">
+                <ReactCountryFlag countryCode="GB" svg style={{ width: "70px", height: "40px" }} />
+                <span style={{ color: "#0F3A5E" }}>Study in UK</span>
               </a>
-
-              {/* Study in Australia */}
-              <a
-                href="/au"
-                className="flex items-center space-x-2 hover:text-blue-500"
-                // onClick={(e) => {
-                //   e.preventDefault();
-                //   setSelectedCountry("Australia");
-                //   window.location.href = "/education";
-                // }}
-              >
-                <ReactCountryFlag countryCode="AU" svg style={{width:'70px', height:'40px'}}/>
-                <span style={{color:'#0F3A5E'}}>Study in Australia</span>
+              <a href="/au" className="flex items-center space-x-2 hover:text-blue-500">
+                <ReactCountryFlag countryCode="AU" svg style={{ width: "70px", height: "40px" }} />
+                <span style={{ color: "#0F3A5E" }}>Study in Australia</span>
               </a>
-
-                 {/* Study in Europe*/}
-                 <a
-                href="/eu"
-                className="flex items-center space-x-2 hover:text-blue-500"
-                // onClick={(e) => {
-                //   e.preventDefault();
-                //   setSelectedCountry("Europe");
-                //   window.location.href = "/education";
-                // }}
-              >
-                <ReactCountryFlag countryCode="EU" svg style={{width:'70px', height:'40px'}}/>
-                <span style={{color:'#0F3A5E'}}>Study in Europe</span>
+              <a href="/eu" className="flex items-center space-x-2 hover:text-blue-500">
+                <ReactCountryFlag countryCode="EU" svg style={{ width: "70px", height: "40px" }} />
+                <span style={{ color: "#0F3A5E" }}>Study in Europe</span>
               </a>
             </div>
           </div>
         </div>
+
+        {/* Learning Prep */}
         <div className="group relative">
-        <p className="flex items-center hover:text-blue-500"> 
-            <span style={{color:'#0F3A5E', fontWeight:'bold'}}>Learning Prep</span> 
-            <MdKeyboardArrowDown className="ml-1" /> 
+          <p className="flex items-center hover:text-blue-500">
+            <span style={{ color: "#0F3A5E", fontWeight: "bold" }}>Learning Prep</span>
+            <MdKeyboardArrowDown className="ml-1" />
           </p>
-
-       {/* Dropdown Menu */}
-       <div className="absolute left-0 mt-2 bg-white shadow-lg border rounded-lg opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transform -translate-y-2 transition-all duration-200">
+          <div className="absolute left-0 mt-2 bg-white shadow-lg border rounded-lg opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 -translate-y-2 transition-all duration-200">
             <div className="p-7 space-y-2">
-              {/* IELTS */}
-              <a
-                href="/ielts"
-                className="flex items-center space-x-2 hover:text-blue-500"
-                style={{ height: '40px', width: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-              >
-                <img
-                  src={ielts}
-                  alt="IELTS"
-                  // className="w-6 h-6 object-cover rounded-full"
-                  className="w-20 h-19 mx-auto"
-                />
-                {/* <span>IELTS</span> */}
+              <a href="/ielts" className="hover:text-blue-500">
+                <img src={ielts} alt="IELTS" className="w-20 h-19 mx-auto" />
               </a>
-
-              {/* GMAT */}
-              <a
-                href="/gmat"
-                className="flex items-center space-x-2 hover:text-blue-500"
-                style={{ height: '50px', width: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-              >
-                <img
-                  src={gmatmini}
-
-                  alt="Statue of Liberty"
-                  // className="w-6 h-6 object-cover rounded-full"
-                  className="w-20 h-20 mx-auto"
-                />
-                {/* <span>GMAT</span> */}
+              <a href="/gmat" className="hover:text-blue-500">
+                <img src={gmatmini} alt="GMAT" className="w-20 h-20 mx-auto" />
               </a>
-              
-              {/* ETS GRE*/}
-              <a
-                href="/gre"
-                className="flex items-center space-x-2 hover:text-blue-500"
-                style={{ height: '50px', width: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-              >
-                <img
-                  src={etsgre}
-                  alt="Statue of Liberty"
-                  // className="w-6 h-6 object-cover rounded-full"
-                  className="w-15 h-8 mx-auto"
-                />
-                {/* <span>GRE </span> */}
+              <a href="/gre" className="hover:text-blue-500">
+                <img src={etsgre} alt="GRE" className="w-15 h-8 mx-auto" />
               </a>
-
-              
-              {/* ETS TOEFL */}
-              <a
-                href="/toefl"
-                className="flex items-center space-x-2 hover:text-blue-500"
-                style={{ height: '50px', width: '90px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-              >
-                <img
-                  src={etstoefl}
-                  alt="Statue of Liberty"
-                  // className="w-6 h-6 object-cover rounded-full"
-                  className="w-20 h-19 mx-auto"
-                />
-                {/* <span>TOEFL </span> */}
+              <a href="/toefl" className="hover:text-blue-500">
+                <img src={etstoefl} alt="TOEFL" className="w-20 h-19 mx-auto" />
               </a>
-
-               {/* DUOLINGO */}
-               <a
-                href="/duolingo"
-                className="flex items-center space-x-2 hover:text-blue-500"
-                style={{ height: '40px', width: '90px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-              >
-                <img
-                  src={duolingo}
-
-                  alt="Statue of Liberty"
-                  className="w-20 h-19 object-cover rounded-full"
-                  // className="w-24 h-24 mx-auto"
-                />
-                {/* <span>Duolingo </span> */}
+              <a href="/duolingo" className="hover:text-blue-500">
+                <img src={duolingo} alt="Duolingo" className="w-20 h-19 mx-auto" />
               </a>
-
-                 {/* PEARSON PTE */}
-                 <a
-                href="/pte"
-                className="flex items-center space-x-2 hover:text-blue-500"
-                style={{ height: '50px', width: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-              >
-                <img
-                  src={pearsonpte}
-                  alt="Statue of Liberty"
-                  // className="w-6 h-6 object-cover rounded-full"
-                  className="w-20 h-10 mx-auto"
-                />
-                {/* <span>PTE </span> */}
+              <a href="/pte" className="hover:text-blue-500">
+                <img src={pearsonpte} alt="PTE" className="w-20 h-10 mx-auto" />
               </a>
             </div>
           </div>
+        </div>
+
+        {/* Other Links */}
+        <a href="/services" className="hover:text-blue-500" style={{ color: "#0F3A5E", fontWeight: "bold" }}>
+          Services
+        </a>
+        <a href="/about" className="hover:text-blue-500" style={{ color: "#0F3A5E", fontWeight: "bold" }}>
+          About Us
+        </a>
+        <button onClick={handleFormToggle} className="hover:text-blue-500" style={{ color: "#0F3A5E", fontWeight: "bold" }}>
+          Apply Now
+        </button>
+
+        {/* Phone Icon */}
+        <div className="relative group">
+          <FaPhoneAlt size={20} style={{ marginTop: "3px", color: "#0F3A5E" }} />
+          <div className="absolute top-full mt-2 left-[-80%] transform translate-x-[-60%] px-3 py-1 bg-gray-700 text-white text-sm rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+            +91 79972 22217
+          </div>
+        </div>
       </div>
-      <a href="/services" className="hover:text-blue-500" style={{color:'#0F3A5E', fontWeight:'bold'}}>
-        Services 
-      </a>
-      {/* <a href="/immigration" className="hover:text-blue-500">
-        Immigration
-      </a> */}
-      <a href="/about" className="hover:text-blue-500" style={{color:'#0F3A5E', fontWeight:'bold'}}>
-        About Us
-      </a>
-      <button
-            className="hover:text-blue-500"
-            onClick={handleFormToggle}
-            style={{color:'#0F3A5E', fontWeight:'bold'}}
-          >
-            Apply Now
-          </button>
-      {/* <a href="" className="hover:text-blue-500">
-        <FaPhoneAlt size={20} style={{marginTop:'3px'}}/>
-      </a> */}
-      {/* Phone Icon with Tooltip */}
-      <div className="relative group">
-            <div className="flex items-center space-x-1">
-              {/* <span className="material-icons text-gray-500 cursor-pointer group-hover:text-blue-500">
-                phone
-              </span> */}
-              <FaPhoneAlt size={20} style={{marginTop:'3px', color:'#0F3A5E'}}/>
-            </div>
-            {/* Tooltip */}
-            <div className="absolute top-full mt-2 left-[-80%] transform translate-x-[-60%] px-3 py-1 bg-gray-700 text-white text-sm rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap" style={{backgroundColor:'#0F3A5E'}}>
-              +91 79972 22217
-            </div>
-          </div>
-    </nav>
 
-    {/* Mobile Menu */}
-    <div className="md:hidden">
-      <button className="text-gray-700 text-2xl">
-        <i className="fas fa-bars"><GiHamburgerMenu /></i>
-      </button>
+      {/* Mobile Menu */}
+      <div className="relative">
+      {/* Hamburger Icon */}
+      <div className="md:hidden flex justify-between items-center z-10">
+        <button className="text-gray-700 text-2xl" onClick={toggleMenu}>
+          <GiHamburgerMenu />
+        </button>
+      </div>
+
+      {/* Mobile Drawer */}
+      <div
+        className={`fixed top-20 right-0 h-50% w-64 bg-white shadow-lg transition-transform duration-300 transform ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+      >
+        <div className="p-6">
+          {/* Menu Items */}
+          <div>
+            <div>
+              <p
+                className="flex items-center justify-between text-gray-800 font-bold cursor-pointer"
+                onClick={toggleOverseasMenu} style={{ color: "#0F3A5E"}}
+              >
+                Overseas Education
+                <MdKeyboardArrowDown
+                  className={`transform transition-transform duration-200 ${overseasMenuOpen ? 'rotate-180' : ''}`}
+                />
+              </p>
+              {overseasMenuOpen && (
+                <div className="pl-6 mt-2 space-y-2" style={{ color: "#0F3A5E"}}>
+                  <a href="/us" className="block text-black hover:text-blue-500"><ReactCountryFlag countryCode="US" svg style={{ width: "60px", height: "40px" }} /><span>Study in USA</span></a>
+                  <a href="/uk" className="block text-black hover:text-blue-500"><ReactCountryFlag countryCode="GB" svg style={{ width: "60px", height: "40px" }} /><span>Study in UK</span></a>
+                  <a href="/au" className="block text-black hover:text-blue-500"><ReactCountryFlag countryCode="AU" svg style={{ width: "60px", height: "40px" }} /><span>Study in Australia</span></a>
+                  <a href="/eu" className="block text-black hover:text-blue-500"><ReactCountryFlag countryCode="EU" svg style={{ width: "60px", height: "40px" }} /><span>Study in Europe</span></a>
+                </div>
+              )}
+            </div>
+            <div>
+              <p
+                className="flex items-center justify-between text-gray-800 font-bold cursor-pointer mt-3"
+                onClick={toggleLearningPrepMenu} style={{ color: "#0F3A5E"}}
+              >
+                Learning Prep
+                <MdKeyboardArrowDown
+                  className={`transform transition-transform duration-200 ${learningPrepMenuOpen ? 'rotate-180' : ''}`}
+                />
+              </p>  
+              {learningPrepMenuOpen && (
+                <div className="pl-6 mt-2 space-y-2 justify-center" style={{ color: "#0F3A5E"}}>
+                  <a href="/ielts" className="block text-black hover:text-blue-500"><img src={ielts} alt="GRE" className="w-15 h-8 mx-auto" /></a>
+                  <a href="/gmat" className="block text-black hover:text-blue-500"><img src={gmatmini} alt="GRE" className="w-15 h-12 mx-auto" /></a>
+                  <a href="/gre" className="block text-black hover:text-blue-500"><img src={etsgre} alt="GRE" className="w-15 h-8 mx-auto" /></a>
+                  <a href="/toefl" className="block text-black hover:text-blue-500"><img src={etstoefl} alt="GRE" className="w-15 h-8 mx-auto" /></a>
+                  <a href="/duolingo" className="block text-black hover:text-blue-500"><img src={duolingo} alt="GRE" className="w-15 h-10 mx-auto" /></a>
+                  <a href="/pte" className="block text-black hover:text-blue-500"><img src={pearsonpte} alt="GRE" className="w-15 h-8 mx-auto" /></a>
+                </div>
+              )}
+            </div>
+
+            {/* Other Menu Items */}
+            <a href="/services" className="block text-black hover:text-blue-500 mt-4" style={{ color: "#0F3A5E", fontWeight:'bold'}}>Services</a>
+            <a href="/about" className="block text-black hover:text-blue-500 mt-4" style={{ color: "#0F3A5E" ,fontWeight:'bold'}}>About Us</a>
+            <button className="block text-black hover:text-blue-500 mt-4" style={{ color: "#0F3A5E" ,fontWeight:'bold'}}>Apply Now</button>
+          </div>
+        </div>
+      </div>
     </div>
+    </nav>
   </header>
 
      {/* Routes Definition */}
