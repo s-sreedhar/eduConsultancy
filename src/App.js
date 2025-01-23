@@ -110,6 +110,26 @@ const App = () => {
     };
   }, [lastScrollY]); // Dependency array to re-run effect when `lastScrollY` changes
 
+  const [isDropdownVisible1, setIsDropdownVisible1] = useState(false);
+
+  const toggleDropdown1 = () => {
+    setIsDropdownVisible1(!isDropdownVisible1);
+  };
+
+  const closeDropdown1 = () => {
+    setIsDropdownVisible1(false);
+  };
+
+    const [isDropdownVisible2, setIsDropdownVisible2] = useState(false);
+
+  const toggleDropdown2 = () => {
+    setIsDropdownVisible2(!isDropdownVisible2);
+  };
+
+  const closeDropdown2 = () => {
+    setIsDropdownVisible2(false);
+  };
+
   return (
     <>
     <header className={`flex items-center justify-between p-4 bg-white shadow-md sticky top-0 z-10 ${isVisible ? "translate-y-0" : "-translate-y-full"}`}>
@@ -125,63 +145,106 @@ const App = () => {
       {/* Desktop Navigation */}
       <div className="hidden md:flex space-x-6 text-black-700 items-center">
         {/* Overseas Education */}
-        <div className="group relative">
-          <p className="flex items-center hover:text-blue-500">
-            <span style={{ color: "#0F3A5E", fontWeight: "bold", cursor:'pointer' }}>Overseas Education</span>
-            <MdKeyboardArrowDown className="ml-1" />
-          </p>  
+        
+        <div className="relative">
+      {/* Main Label */}
+      <div className="group relative">
+        <p
+          className="flex items-center cursor-pointer"
+          onClick={toggleDropdown1}
+          style={{ color: "#0F3A5E", fontWeight: "bold" }}
+        >
+          Overseas Education
+          <MdKeyboardArrowDown className="ml-1" />
+        </p>
 
-          {/* Dropdown Menu */}
-          <div className="absolute left-0 mt-2 bg-white shadow-lg border rounded-lg opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 -translate-y-2 transition-all duration-200">
+        {/* Dropdown Menu */}
+        {isDropdownVisible1 && (
+          <div
+            className="absolute left-0 mt-2 bg-white shadow-lg border rounded-lg transition-all duration-200"
+            onMouseLeave={closeDropdown1} // Optional: Close dropdown when mouse leaves
+          >
             <div className="p-4 space-y-2">
-              <a href="/us" className="flex items-center space-x-2 hover:text-blue-500">
-                <ReactCountryFlag countryCode="US" svg style={{ width: "70px", height: "40px" }} />
+              <a
+                href="/us"
+                className="flex items-center space-x-2 hover:text-blue-500"
+              >
+                <ReactCountryFlag
+                  countryCode="US"
+                  svg
+                  style={{ width: "70px", height: "40px" }}
+                />
                 <span style={{ color: "#0F3A5E" }}>Study in USA</span>
               </a>
-              <a href="/uk" className="flex items-center space-x-2 hover:text-blue-500">
-                <ReactCountryFlag countryCode="GB" svg style={{ width: "70px", height: "40px" }} />
+              <a
+                href="/uk"
+                className="flex items-center space-x-2 hover:text-blue-500"
+              >
+                <ReactCountryFlag
+                  countryCode="GB"
+                  svg
+                  style={{ width: "70px", height: "40px" }}
+                />
                 <span style={{ color: "#0F3A5E" }}>Study in UK</span>
               </a>
-              <a href="/au" className="flex items-center space-x-2 hover:text-blue-500">
-                <ReactCountryFlag countryCode="AU" svg style={{ width: "70px", height: "40px" }} />
+              <a
+                href="/au"
+                className="flex items-center space-x-2 hover:text-blue-500"
+              >
+                <ReactCountryFlag
+                  countryCode="AU"
+                  svg
+                  style={{ width: "70px", height: "40px" }}
+                />
                 <span style={{ color: "#0F3A5E" }}>Study in Australia</span>
               </a>
-              <a href="/eu" className="flex items-center space-x-2 hover:text-blue-500">
-                <ReactCountryFlag countryCode="EU" svg style={{ width: "70px", height: "40px" }} />
+              <a
+                href="/eu"
+                className="flex items-center space-x-2 hover:text-blue-500"
+              >
+                <ReactCountryFlag
+                  countryCode="EU"
+                  svg
+                  style={{ width: "70px", height: "40px" }}
+                />
                 <span style={{ color: "#0F3A5E" }}>Study in Europe</span>
               </a>
             </div>
           </div>
-        </div>
+        )}
+      </div>
+    </div>
 
         {/* Learning Prep */}
         <div className="group relative">
-          <p className="flex items-center hover:text-blue-500">
+          <p className="flex items-center cursor-pointer" onClick={toggleDropdown2}>
             <span style={{ color: "#0F3A5E", fontWeight: "bold" , cursor:'pointer'}}>Learning Prep</span>
             <MdKeyboardArrowDown className="ml-1" />
           </p>
-          <div className="absolute left-0 mt-2 bg-white shadow-lg border rounded-lg opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 -translate-y-2 transition-all duration-200">
-            <div className="p-7 space-y-2">
-              <a href="/ielts" className="hover:text-blue-500">
-                <img src={ielts} alt="IELTS" className="w-20 h-20 mx-auto" />
-              </a>
-              <a href="/gmat" className="hover:text-blue-500">
-                <img src={gmatmini} alt="GMAT" className="w-20 h-14 mx-auto" style={{marginTop:'-10px'}} />
-              </a>
-              <a href="/gre" className="hover:text-blue-500">
-                <img src={etsgre} alt="GRE" className="w-15 h-12 mx-auto" />
-              </a>
-              <a href="/toefl" className="hover:text-blue-500">
-                <img src={etstoefl} alt="TOEFL" className="w-20 h-16 mx-auto" />
-              </a>
-              <a href="/duolingo" className="hover:text-blue-500">
-                <img src={duolingo} alt="Duolingo" className="w-20 h-20 mx-auto" />
-              </a>
-              <a href="/pte" className="hover:text-blue-500">
-                <img src={pearsonpte} alt="PTE" className="w-20 h-16 mx-auto" />
-              </a>
-            </div>
-          </div>
+        {isDropdownVisible2 && 
+           <div  className="absolute left-0 mt-2 bg-white shadow-lg border rounded-lg transition-all duration-200"
+           onMouseLeave={closeDropdown2}>
+           <div className="p-7 space-y-2">
+             <a href="/ielts" className="hover:text-blue-500">
+               <img src={ielts} alt="IELTS" className="w-20 h-20 mx-auto" />
+             </a>
+             <a href="/gmat" className="hover:text-blue-500">
+               <img src={gmatmini} alt="GMAT" className="w-20 h-14 mx-auto" style={{marginTop:'-10px'}} />
+             </a>
+             <a href="/gre" className="hover:text-blue-500">
+               <img src={etsgre} alt="GRE" className="w-15 h-12 mx-auto" />
+             </a>
+             <a href="/toefl" className="hover:text-blue-500">
+               <img src={etstoefl} alt="TOEFL" className="w-20 h-16 mx-auto" />
+             </a>
+             <a href="/duolingo" className="hover:text-blue-500">
+               <img src={duolingo} alt="Duolingo" className="w-20 h-20 mx-auto" />
+             </a>
+             <a href="/pte" className="hover:text-blue-500">
+               <img src={pearsonpte} alt="PTE" className="w-20 h-16 mx-auto" />
+             </a>
+           </div>
+         </div>}
         </div>
 
         {/* Other Links */}
