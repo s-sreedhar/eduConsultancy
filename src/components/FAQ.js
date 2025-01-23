@@ -39,7 +39,7 @@ const FAQ = () => {
 
   return (
     <div className="max-w-4xl mx-auto mt-10">
-      <h2 className="text-2xl font-bold mb-6 text-center">Frequently Asked Questions</h2>
+      <h2 className="text-2xl font-bold mb-6 text-center" style={{cursor:'default'}}>Frequently Asked Questions</h2>
       {faqs.map((faq, index) => (
         <div key={index} className="mb-4 border-b-2 border-blue-500" >
           <button

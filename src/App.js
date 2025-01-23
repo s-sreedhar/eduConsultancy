@@ -1,4 +1,4 @@
-import {React, useState }from "react";
+import {React, useState, useEffect }from "react";
 import { Routes, Route } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import { FaPhoneAlt } from "react-icons/fa";
@@ -85,26 +85,51 @@ const App = () => {
   
     // const [selectedCountry, setSelectedCountry] = useState("USA");
     // console.log("THe line 71 data is", selectedCountry)
+    const [isVisible, setIsVisible] = useState(true); // State to track navbar visibility
+  const [lastScrollY, setLastScrollY] = useState(0); // State to track last scroll position
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY) {
+        // Scrolling down
+        setIsVisible(false);
+      } else {
+        // Scrolling up
+        setIsVisible(true);
+      }
+
+      setLastScrollY(currentScrollY); // Update the last scroll position
+    };
+
+    window.addEventListener("scroll", handleScroll); // Add scroll event listener
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll); // Cleanup event listener on component unmount
+    };
+  }, [lastScrollY]); // Dependency array to re-run effect when `lastScrollY` changes
+
   return (
     <>
-    <header className="flex items-center justify-between p-4 bg-white shadow-md sticky top-0 z-10">
+    <header className={`flex items-center justify-between p-4 bg-white shadow-md sticky top-0 z-10 ${isVisible ? "translate-y-0" : "-translate-y-full"}`}>
   {/* Logo */}
   <div className="flex items-center">
   <div className="flex flex-col items-start mr-2"> 
-    <div className="text-xl font-bold text-blue" onClick={() => navigate('/')} style={{color:'#0F3A5E', pointer:'none'}}>CS Overseas</div>
-    <p className="text-xs font-normal">Study Abroad, Shape your Future</p> 
+    <div className="text-xl font-bold text-blue" onClick={() => navigate('/')} style={{color:'#0F3A5E', cursor:'pointer'}}>CS Overseas</div>
+    <p className="text-xs font-normal" style={{cursor:'pointer'}}>Study Abroad, Shape your Future</p> 
   </div>
-  <img src={csoverseaslogo} style={{height:'40px', width:'40px'}} alt="CS Overseas Logo" /> 
+  <img src={csoverseaslogo} style={{height:'40px', width:'40px', cursor:'default'}} alt="CS Overseas Logo" /> 
 </div>
-<nav className="relative">
+ <nav className="relative">
       {/* Desktop Navigation */}
       <div className="hidden md:flex space-x-6 text-black-700 items-center">
         {/* Overseas Education */}
         <div className="group relative">
           <p className="flex items-center hover:text-blue-500">
-            <span style={{ color: "#0F3A5E", fontWeight: "bold" }}>Overseas Education</span>
+            <span style={{ color: "#0F3A5E", fontWeight: "bold", cursor:'pointer' }}>Overseas Education</span>
             <MdKeyboardArrowDown className="ml-1" />
-          </p>
+          </p>  
 
           {/* Dropdown Menu */}
           <div className="absolute left-0 mt-2 bg-white shadow-lg border rounded-lg opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 -translate-y-2 transition-all duration-200">
@@ -132,28 +157,28 @@ const App = () => {
         {/* Learning Prep */}
         <div className="group relative">
           <p className="flex items-center hover:text-blue-500">
-            <span style={{ color: "#0F3A5E", fontWeight: "bold" }}>Learning Prep</span>
+            <span style={{ color: "#0F3A5E", fontWeight: "bold" , cursor:'pointer'}}>Learning Prep</span>
             <MdKeyboardArrowDown className="ml-1" />
           </p>
           <div className="absolute left-0 mt-2 bg-white shadow-lg border rounded-lg opacity-0 group-hover:opacity-100 transform group-hover:translate-y-0 -translate-y-2 transition-all duration-200">
             <div className="p-7 space-y-2">
               <a href="/ielts" className="hover:text-blue-500">
-                <img src={ielts} alt="IELTS" className="w-20 h-19 mx-auto" />
+                <img src={ielts} alt="IELTS" className="w-20 h-20 mx-auto" />
               </a>
               <a href="/gmat" className="hover:text-blue-500">
-                <img src={gmatmini} alt="GMAT" className="w-20 h-20 mx-auto" />
+                <img src={gmatmini} alt="GMAT" className="w-20 h-14 mx-auto" style={{marginTop:'-10px'}} />
               </a>
               <a href="/gre" className="hover:text-blue-500">
-                <img src={etsgre} alt="GRE" className="w-15 h-8 mx-auto" />
+                <img src={etsgre} alt="GRE" className="w-15 h-12 mx-auto" />
               </a>
               <a href="/toefl" className="hover:text-blue-500">
-                <img src={etstoefl} alt="TOEFL" className="w-20 h-19 mx-auto" />
+                <img src={etstoefl} alt="TOEFL" className="w-20 h-16 mx-auto" />
               </a>
               <a href="/duolingo" className="hover:text-blue-500">
-                <img src={duolingo} alt="Duolingo" className="w-20 h-19 mx-auto" />
+                <img src={duolingo} alt="Duolingo" className="w-20 h-20 mx-auto" />
               </a>
               <a href="/pte" className="hover:text-blue-500">
-                <img src={pearsonpte} alt="PTE" className="w-20 h-10 mx-auto" />
+                <img src={pearsonpte} alt="PTE" className="w-20 h-16 mx-auto" />
               </a>
             </div>
           </div>
@@ -167,12 +192,12 @@ const App = () => {
           About Us
         </a>
         <button onClick={handleFormToggle} className="hover:text-blue-500" style={{ color: "#0F3A5E", fontWeight: "bold" }}>
-          Apply Now
+          Register Now
         </button>
 
         {/* Phone Icon */}
         <div className="relative group">
-          <FaPhoneAlt size={20} style={{ marginTop: "3px", color: "#0F3A5E" }} />
+          <FaPhoneAlt size={20} style={{ marginTop: "3px", color: "#0F3A5E", cursor:'pointer' }} />
           <div className="absolute top-full mt-2 left-[-80%] transform translate-x-[-60%] px-3 py-1 bg-gray-700 text-white text-sm rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
             +91 79972 22217
           </div>
@@ -239,7 +264,7 @@ const App = () => {
             {/* Other Menu Items */}
             <a href="/services" className="block text-black hover:text-blue-500 mt-4" style={{ color: "#0F3A5E", fontWeight:'bold'}}>Services</a>
             <a href="/about" className="block text-black hover:text-blue-500 mt-4" style={{ color: "#0F3A5E" ,fontWeight:'bold'}}>About Us</a>
-            <button className="block text-black hover:text-blue-500 mt-4" style={{ color: "#0F3A5E" ,fontWeight:'bold'}} onClick={handleFormToggle}>Apply Now</button>
+            <button className="block text-black hover:text-blue-500 mt-4" style={{ color: "#0F3A5E" ,fontWeight:'bold'}} onClick={handleFormToggle}>Register Now</button>
           </div>
         </div>
       </div>

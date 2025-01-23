@@ -139,7 +139,7 @@ const Home = () => {
         {/* Overlay Content */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-6">
           {/* Typewriter Effect */}
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4" style={{cursor:'default'}}>
             <ReactTyped
               strings={[
                 "Education Beyond Boundaries",
@@ -151,14 +151,14 @@ const Home = () => {
               loop
             />
           </h1>
-          <p className="text-lg md:text-xl mb-6">
+          <p className="text-lg md:text-xl mb-6" style={{cursor:'default'}}>
            Fulfill your Study Abroad Dreams
           </p>
           <div className="flex space-x-4">
             {/* Join Now Button */}
             <button className="px-6 py-3 bg-blue-500 rounded-lg text-white font-medium hover:bg-blue-600" style={{backgroundColor:'#0F3A5E'}}
             onClick={handleFormToggle}>
-              Apply Now
+              Register Now
             </button>
             {/* Watch Video Button */}
             {/* <a
@@ -178,8 +178,8 @@ const Home = () => {
         <img src={studenthome} alt="Student" className="w-full h-1/8 object-cover"/> 
       </div>
       <div className="w-1/2 p-8">
-        <h2 className="text-2xl font-bold mb-4">Making Dreams Possible</h2>
-        <p className="text-gray-700">Your gateway to global education. We guide you through every step of your study abroad journey, from choosing the right university to securing your visa.</p>
+        <h2 className="text-2xl font-bold mb-4" style={{cursor:'default'}}>Making Dreams Possible</h2>
+        <p className="text-gray-700" style={{cursor:'default'}}>Your gateway to global education. We guide you through every step of your study abroad journey, from choosing the right university to securing your visa.</p>
         {/* <button style={{marginTop : '1.5rem'}}
       onClick={() => navigate('/about')} 
       className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700">
@@ -189,8 +189,8 @@ const Home = () => {
     </section>
     
     <div className="text-center py-6">
-      <h1 className="text-3xl font-bold mb-2">One-Stop Destination for All Your Study Abroad Needs</h1>
-      <p className="text-lg text-gray-500">We make your entire study abroad journey a grand success.</p>
+      <h1 className="text-3xl font-bold mb-2" style={{cursor:'default'}}>One-Stop Destination for All Your Study Abroad Needs</h1>
+      <p className="text-lg text-gray-500" style={{cursor:'default'}}>We make your entire study abroad journey a grand success.</p>
     </div>
     
     <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 p-4">
@@ -343,15 +343,15 @@ const Home = () => {
     </div>
          */}
     <div className="text-center p-6 bg-gray-100">
-      <h2 className="text-2xl font-bold mb-4">Countries / Universities</h2>
-      <p className="text-gray-600 mb-6">
+      <h2 className="text-2xl font-bold mb-4" style={{cursor:'default'}}>Countries / Universities</h2>
+      <p className="text-gray-600 mb-6" style={{cursor:'default'}}>
         To help you find your perfect destination, click through these countries and find out more about what it’s like to study and live there! If you already have a good idea about the destination, click further to explore university options. We have more than 700 partner universities that would love to invite international students like you!
       </p>
       <div className="flex justify-center flex-wrap gap-6">
       {countries.map((country, index) => (
       <div key={index} className="text-center">
-      <img src={country.image} alt={country.name} className="w-60 h-60 mx-auto" />
-      <p className="text-blue-700 font-medium mt-2" style={{color:'#0F3A5E'}}>{country.name}</p>
+      <img src={country.image} alt={country.name} className="w-60 h-60 mx-auto" style={{cursor:'default'}}/>
+      <p className="text-blue-700 font-medium mt-2" style={{color:'#0F3A5E', cursor:'default'}}>{country.name} </p>
       </div>
       ))}
       </div>
@@ -408,10 +408,10 @@ const Home = () => {
 
     
     <div className="bg-gray-50 py-10">
-      <h1 className="text-3xl font-bold text-center mb-4">
+      <h1 className="text-3xl font-bold text-center mb-4" style={{cursor:'default'}}>
         Crack Your Admission Tests With Confidence
       </h1>
-      <p className="text-center text-gray-600 mb-8">
+      <p className="text-center text-gray-600 mb-8" style={{cursor:'default'}}>
         Elevate your chances of studying abroad with our expert coaching.
       </p>
       <div className="grid grid-cols-3 gap-6 px-6 md:px-20">
