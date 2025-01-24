@@ -40,7 +40,7 @@ import birminghamuniversity from '../assets/birminghamuniversity.png'
 import universityofroehampton from '../assets/roehamptonuniversity.png'
 import universityofgreenwhich from '../assets/universityofgreenwhich.png'
 
-import FAQ from '../components/FAQ'
+import FAQ from './FAQ'
 import Testimonials from "./Testimonials";
 const Home = () => {
     // const navigate = useNavigate();

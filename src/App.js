@@ -28,6 +28,7 @@ import GREPage from "./components/GRELearning";
 import TOEFLPage from "./components/TOEFLPage";
 import DuolingoPage from "./components/DuolingoLearning";
 import PTEPage from "./components/PTELearning";
+import Copyright from "./components/Copyright";
 const App = () => {
   const navigate = useNavigate()
   const [showForm, setShowForm] = useState(false);
@@ -135,8 +136,8 @@ const App = () => {
     <header className={`flex items-center justify-between p-4 bg-white shadow-md sticky top-0 z-10 ${isVisible ? "translate-y-0" : "-translate-y-full"}`}>
   {/* Logo */}
   <div className="flex items-center">
-  <div className="flex flex-col items-start mr-2"> 
-    <div className="text-xl font-bold text-blue" onClick={() => navigate('/')} style={{color:'#0F3A5E', cursor:'pointer'}}>CS Overseas</div>
+  <div className="flex flex-col items-start mr-2" onClick={() => navigate('/')}> 
+    <div className="text-xl font-bold text-blue"  style={{color:'#0F3A5E', cursor:'pointer'}}>CS Overseas</div>
     <p className="text-xs font-normal" style={{cursor:'pointer'}}>Study Abroad, Shape your Future</p> 
   </div>
   <img src={csoverseaslogo} style={{height:'40px', width:'40px', cursor:'default'}} alt="CS Overseas Logo" /> 
@@ -349,6 +350,7 @@ const App = () => {
         <Route path="/duolingo" element={<DuolingoPage/>} />
         <Route path="/pte" element={<PTEPage/>} />
         <Route path="/services" element={<Services />} />
+        <Route path="/copyright" element={<Copyright/>} />
         {/* <Route path="/immigration" element={<Immigration />} /> */}
         <Route path="/about" element={<About />} />
         {/* <Route path="*" element={<NotFound />} /> */}

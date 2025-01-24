@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Testimonials = () => {
   // const [currentIndex, setCurrentIndex] = useState(0);

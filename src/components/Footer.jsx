@@ -1,5 +1,7 @@
 import {  FaFacebook, FaInstagram, FaGoogle } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 const Footer = () => {
+  const navigate = useNavigate()
     return (
         <footer className="bg-blue-500 text-white py-10" style={{backgroundColor:'#0F3A5E'}}>
   <div className="container mx-auto px-4">
@@ -119,7 +121,7 @@ const Footer = () => {
     </div>
 
     {/* Copyright */}
-    <div className="mt-10 text-center text-sm" style={{cursor:'default'}}>
+    <div className="mt-10 text-center text-sm" style={{cursor:'default'}} onClick={() => navigate("/copyright")}>
       © Copyright CS Overseas 2025. All rights reserved.
     </div>
   </div>

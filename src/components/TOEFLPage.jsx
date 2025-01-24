@@ -1,12 +1,12 @@
 import React from "react";
 import ieltseducation from '../assets/ieltseducation.png';
 import toeflscorecard from '../assets/toeflscorecard.png';
-import { TfiBlackboard } from "react-icons/tfi";
-import { FaChalkboardTeacher } from "react-icons/fa";
-import { TbView360Number } from "react-icons/tb";
-import { TfiWrite } from "react-icons/tfi";
-import { IoShuffle } from "react-icons/io5";
-import { FaRegPaperPlane } from "react-icons/fa6";
+// import { TfiBlackboard } from "react-icons/tfi";
+// import { FaChalkboardTeacher } from "react-icons/fa";
+// import { TbView360Number } from "react-icons/tb";
+// import { TfiWrite } from "react-icons/tfi";
+// import { IoShuffle } from "react-icons/io5";
+// import { FaRegPaperPlane } from "react-icons/fa6";
 
 const TOEFLPage = () => {
   return (
