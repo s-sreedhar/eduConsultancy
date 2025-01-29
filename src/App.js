@@ -270,69 +270,108 @@ const App = () => {
 
       {/* Mobile Menu */}
       <div className="relative">
-      {/* Hamburger Icon */}
-      <div className="md:hidden flex justify-between items-center z-10">
-        <button className="text-gray-700 text-2xl" onClick={toggleMenu}>
-          <GiHamburgerMenu />
+  {/* Hamburger Icon */}
+  <div className="md:hidden flex justify-between items-center z-10">
+    <button className="text-gray-700 text-2xl" onClick={toggleMenu}>
+      <GiHamburgerMenu />
+    </button>
+  </div>
+
+  {/* Mobile Drawer */}
+  <div
+    className={`fixed top-20 right-[-100%] h-50% w-64 bg-white shadow-lg transition-all duration-300 ${
+      menuOpen ? 'right-0' : ''
+    }`}
+    style={{ overflowX: 'hidden' }}
+  >
+    <div className="p-6">
+      {/* Menu Items */}
+      <div>
+        <div>
+          <p
+            className="flex items-center justify-between text-gray-800 font-bold cursor-pointer"
+            onClick={toggleOverseasMenu}
+            style={{ color: "#0F3A5E" }}
+          >
+            Overseas Education
+            <MdKeyboardArrowDown
+              className={`transform transition-transform duration-200 ${overseasMenuOpen ? 'rotate-180' : ''}`}
+            />
+          </p>
+          {overseasMenuOpen && (
+            <div className="pl-6 mt-2 space-y-2" style={{ color: "#0F3A5E" }}>
+              <a href="/us" className="block text-black hover:text-blue-500">
+                <ReactCountryFlag countryCode="US" svg style={{ width: "60px", height: "40px" }} />
+                <span>Study in USA</span>
+              </a>
+              <a href="/uk" className="block text-black hover:text-blue-500">
+                <ReactCountryFlag countryCode="GB" svg style={{ width: "60px", height: "40px" }} />
+                <span>Study in UK</span>
+              </a>
+              <a href="/au" className="block text-black hover:text-blue-500">
+                <ReactCountryFlag countryCode="AU" svg style={{ width: "60px", height: "40px" }} />
+                <span>Study in Australia</span>
+              </a>
+              <a href="/eu" className="block text-black hover:text-blue-500">
+                <ReactCountryFlag countryCode="EU" svg style={{ width: "60px", height: "40px" }} />
+                <span>Study in Europe</span>
+              </a>
+            </div>
+          )}
+        </div>
+        <div>
+          <p
+            className="flex items-center justify-between text-gray-800 font-bold cursor-pointer mt-3"
+            onClick={toggleLearningPrepMenu}
+            style={{ color: "#0F3A5E" }}
+          >
+            Learning Prep
+            <MdKeyboardArrowDown
+              className={`transform transition-transform duration-200 ${learningPrepMenuOpen ? 'rotate-180' : ''}`}
+            />
+          </p>
+          {learningPrepMenuOpen && (
+            <div className="pl-6 mt-2 space-y-2 justify-center" style={{ color: "#0F3A5E" }}>
+              <a href="/ielts" className="block text-black hover:text-blue-500">
+                <img src={ielts} alt="GRE" className="w-15 h-8 mx-auto" />
+              </a>
+              <a href="/gmat" className="block text-black hover:text-blue-500">
+                <img src={gmatmini} alt="GRE" className="w-15 h-12 mx-auto" />
+              </a>
+              <a href="/gre" className="block text-black hover:text-blue-500">
+                <img src={etsgre} alt="GRE" className="w-15 h-8 mx-auto" />
+              </a>
+              <a href="/toefl" className="block text-black hover:text-blue-500">
+                <img src={etstoefl} alt="GRE" className="w-15 h-8 mx-auto" />
+              </a>
+              <a href="/duolingo" className="block text-black hover:text-blue-500">
+                <img src={duolingo} alt="GRE" className="w-15 h-10 mx-auto" />
+              </a>
+              <a href="/pte" className="block text-black hover:text-blue-500">
+                <img src={pearsonpte} alt="GRE" className="w-15 h-8 mx-auto" />
+              </a>
+            </div>
+          )}
+        </div>
+
+        {/* Other Menu Items */}
+        <a href="/services" className="block text-black hover:text-blue-500 mt-4" style={{ color: "#0F3A5E", fontWeight: 'bold' }}>
+          Services
+        </a>
+        <a href="/about" className="block text-black hover:text-blue-500 mt-4" style={{ color: "#0F3A5E", fontWeight: 'bold' }}>
+          About Us
+        </a>
+        <button
+          className="block text-black hover:text-blue-500 mt-4"
+          style={{ color: "#0F3A5E", fontWeight: 'bold' }}
+          onClick={handleFormToggle}
+        >
+          Register Now
         </button>
       </div>
-
-      {/* Mobile Drawer */}
-      <div
-        className={`fixed top-20 right-0 h-50% w-64 bg-white shadow-lg transition-transform duration-300 transform ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}
-      >
-        <div className="p-6">
-          {/* Menu Items */}
-          <div>
-            <div>
-              <p
-                className="flex items-center justify-between text-gray-800 font-bold cursor-pointer"
-                onClick={toggleOverseasMenu} style={{ color: "#0F3A5E"}}
-              >
-                Overseas Education
-                <MdKeyboardArrowDown
-                  className={`transform transition-transform duration-200 ${overseasMenuOpen ? 'rotate-180' : ''}`}
-                />
-              </p>
-              {overseasMenuOpen && (
-                <div className="pl-6 mt-2 space-y-2" style={{ color: "#0F3A5E"}}>
-                  <a href="/us" className="block text-black hover:text-blue-500"><ReactCountryFlag countryCode="US" svg style={{ width: "60px", height: "40px" }} /><span>Study in USA</span></a>
-                  <a href="/uk" className="block text-black hover:text-blue-500"><ReactCountryFlag countryCode="GB" svg style={{ width: "60px", height: "40px" }} /><span>Study in UK</span></a>
-                  <a href="/au" className="block text-black hover:text-blue-500"><ReactCountryFlag countryCode="AU" svg style={{ width: "60px", height: "40px" }} /><span>Study in Australia</span></a>
-                  <a href="/eu" className="block text-black hover:text-blue-500"><ReactCountryFlag countryCode="EU" svg style={{ width: "60px", height: "40px" }} /><span>Study in Europe</span></a>
-                </div>
-              )}
-            </div>
-            <div>
-              <p
-                className="flex items-center justify-between text-gray-800 font-bold cursor-pointer mt-3"
-                onClick={toggleLearningPrepMenu} style={{ color: "#0F3A5E"}}
-              >
-                Learning Prep
-                <MdKeyboardArrowDown
-                  className={`transform transition-transform duration-200 ${learningPrepMenuOpen ? 'rotate-180' : ''}`}
-                />
-              </p>  
-              {learningPrepMenuOpen && (
-                <div className="pl-6 mt-2 space-y-2 justify-center" style={{ color: "#0F3A5E"}}>
-                  <a href="/ielts" className="block text-black hover:text-blue-500"><img src={ielts} alt="GRE" className="w-15 h-8 mx-auto" /></a>
-                  <a href="/gmat" className="block text-black hover:text-blue-500"><img src={gmatmini} alt="GRE" className="w-15 h-12 mx-auto" /></a>
-                  <a href="/gre" className="block text-black hover:text-blue-500"><img src={etsgre} alt="GRE" className="w-15 h-8 mx-auto" /></a>
-                  <a href="/toefl" className="block text-black hover:text-blue-500"><img src={etstoefl} alt="GRE" className="w-15 h-8 mx-auto" /></a>
-                  <a href="/duolingo" className="block text-black hover:text-blue-500"><img src={duolingo} alt="GRE" className="w-15 h-10 mx-auto" /></a>
-                  <a href="/pte" className="block text-black hover:text-blue-500"><img src={pearsonpte} alt="GRE" className="w-15 h-8 mx-auto" /></a>
-                </div>
-              )}
-            </div>
-
-            {/* Other Menu Items */}
-            <a href="/services" className="block text-black hover:text-blue-500 mt-4" style={{ color: "#0F3A5E", fontWeight:'bold'}}>Services</a>
-            <a href="/about" className="block text-black hover:text-blue-500 mt-4" style={{ color: "#0F3A5E" ,fontWeight:'bold'}}>About Us</a>
-            <button className="block text-black hover:text-blue-500 mt-4" style={{ color: "#0F3A5E" ,fontWeight:'bold'}} onClick={handleFormToggle}>Register Now</button>
-          </div>
-        </div>
-      </div>
     </div>
+  </div>
+</div>
     </nav>
   </header>
 

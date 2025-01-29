@@ -103,18 +103,22 @@ const Home = () => {
     {
       name: "USA",
       image: statueofliberty,
+      link: "/us"
     },
     {
       name: "UK",
       image: bigben,
+      link: "/uk"
     },
     {
       name: "Australia",
       image: operahouse,
+      link: "/au"
     },
     {
       name: "Europe",
       image: pisatower,
+      link: "/eu"
     },
   ];
 
@@ -349,10 +353,23 @@ const Home = () => {
       </p>
       <div className="flex justify-center flex-wrap gap-6">
       {countries.map((country, index) => (
+      // <div key={index} className="text-center">
+      // <img src={country.image} alt={country.name} className="w-60 h-60 mx-auto" style={{cursor:'default'}}/>
+      // <p className="text-blue-700 font-medium mt-2" style={{color:'#0F3A5E', cursor:'default'}}>{country.name} </p>
+      // </div>
       <div key={index} className="text-center">
-      <img src={country.image} alt={country.name} className="w-60 h-60 mx-auto" style={{cursor:'default'}}/>
-      <p className="text-blue-700 font-medium mt-2" style={{color:'#0F3A5E', cursor:'default'}}>{country.name} </p>
-      </div>
+      <a href={country.link} target="_parent" rel="noopener noreferrer">
+        <img
+          src={country.image}
+          alt={country.name}
+          className="w-60 h-60 mx-auto"
+          style={{ cursor: 'pointer' }}
+        />
+      </a>
+      <p className="text-blue-700 font-medium mt-2" style={{ color: '#0F3A5E', cursor: 'default' }}>
+        {country.name}
+      </p>
+    </div>
       ))}
       </div>
     </div>
