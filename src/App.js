@@ -43,7 +43,18 @@ const App = () => {
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+    if (!menuOpen) {
+      document.body.classList.add("overflow-hidden"); // Disable scrolling
+    } else {
+      document.body.classList.remove("overflow-hidden"); // Enable scrolling
+    }
   };
+
+  useEffect(() => {
+    return () => {
+      document.body.classList.remove("overflow-hidden"); // Ensure cleanup on unmount
+    };
+  }, []);
 
   const toggleOverseasMenu = () => {
     setOverseasMenuOpen(!overseasMenuOpen);
@@ -152,7 +163,7 @@ const App = () => {
       <div className="group relative">
         <p
           className="flex items-center cursor-pointer"
-          onClick={toggleDropdown1}
+          onMouseOver={toggleDropdown1}
           style={{ color: "#0F3A5E", fontWeight: "bold" }}
         >
           Overseas Education
@@ -218,7 +229,7 @@ const App = () => {
 
         {/* Learning Prep */}
         <div className="group relative">
-          <p className="flex items-center cursor-pointer" onClick={toggleDropdown2}>
+          <p className="flex items-center cursor-pointer" onMouseOver={toggleDropdown2}>
             <span style={{ color: "#0F3A5E", fontWeight: "bold" , cursor:'pointer'}}>Learning Prep</span>
             <MdKeyboardArrowDown className="ml-1" />
           </p>
@@ -270,19 +281,19 @@ const App = () => {
 
       {/* Mobile Menu */}
       <div className="relative">
-  {/* Hamburger Icon */}
-  <div className="md:hidden flex justify-between items-center z-10">
-    <button className="text-gray-700 text-2xl" onClick={toggleMenu}>
-      <GiHamburgerMenu />
-    </button>
-  </div>
+      {/* Hamburger Icon */}
+      <div className="md:hidden flex justify-between items-center z-10">
+        <button className="text-gray-700 text-2xl" onClick={toggleMenu}>
+          <GiHamburgerMenu />
+        </button>
+      </div>
 
   {/* Mobile Drawer */}
   <div
-    className={`fixed top-20 right-[-100%] h-50% w-64 bg-white shadow-lg transition-all duration-300 ${
-      menuOpen ? 'right-0' : ''
+    className={`fixed top-20 right-0 h-screen w-64 bg-white shadow-lg transition-all duration-300 transform ${
+      menuOpen ? "translate-x-0" : "translate-x-full"
     }`}
-    style={{ overflowX: 'hidden' }}
+    style={{ overflowX: "hidden", zIndex: 50 }}
   >
     <div className="p-6">
       {/* Menu Items */}
@@ -295,30 +306,49 @@ const App = () => {
           >
             Overseas Education
             <MdKeyboardArrowDown
-              className={`transform transition-transform duration-200 ${overseasMenuOpen ? 'rotate-180' : ''}`}
+              className={`transform transition-transform duration-200 ${
+                overseasMenuOpen ? "rotate-180" : ""
+              }`}
             />
           </p>
           {overseasMenuOpen && (
             <div className="pl-6 mt-2 space-y-2" style={{ color: "#0F3A5E" }}>
-              <a href="/us" className="block text-black hover:text-blue-500">
-                <ReactCountryFlag countryCode="US" svg style={{ width: "60px", height: "40px" }} />
+              <a href="/us" className="block text-black hover:text-blue-500 flex items-center gap-2">
+                <ReactCountryFlag
+                  countryCode="US"
+                  svg
+                  style={{ width: "24px", height: "16px" }}
+                />
                 <span>Study in USA</span>
               </a>
-              <a href="/uk" className="block text-black hover:text-blue-500">
-                <ReactCountryFlag countryCode="GB" svg style={{ width: "60px", height: "40px" }} />
+              <a href="/uk" className="block text-black hover:text-blue-500 flex items-center gap-2">
+                <ReactCountryFlag
+                  countryCode="GB"
+                  svg
+                  style={{ width: "24px", height: "16px" }}
+                />
                 <span>Study in UK</span>
               </a>
-              <a href="/au" className="block text-black hover:text-blue-500">
-                <ReactCountryFlag countryCode="AU" svg style={{ width: "60px", height: "40px" }} />
+              <a href="/au" className="block text-black hover:text-blue-500 flex items-center gap-2">
+                <ReactCountryFlag
+                  countryCode="AU"
+                  svg
+                  style={{ width: "24px", height: "16px" }}
+                />
                 <span>Study in Australia</span>
               </a>
-              <a href="/eu" className="block text-black hover:text-blue-500">
-                <ReactCountryFlag countryCode="EU" svg style={{ width: "60px", height: "40px" }} />
+              <a href="/eu" className="block text-black hover:text-blue-500 flex items-center gap-2">
+                <ReactCountryFlag
+                  countryCode="EU"
+                  svg
+                  style={{ width: "24px", height: "16px" }}
+                />
                 <span>Study in Europe</span>
               </a>
             </div>
           )}
         </div>
+
         <div>
           <p
             className="flex items-center justify-between text-gray-800 font-bold cursor-pointer mt-3"
@@ -327,43 +357,53 @@ const App = () => {
           >
             Learning Prep
             <MdKeyboardArrowDown
-              className={`transform transition-transform duration-200 ${learningPrepMenuOpen ? 'rotate-180' : ''}`}
+              className={`transform transition-transform duration-200 ${
+                learningPrepMenuOpen ? "rotate-180" : ""
+              }`}
             />
           </p>
           {learningPrepMenuOpen && (
             <div className="pl-6 mt-2 space-y-2 justify-center" style={{ color: "#0F3A5E" }}>
               <a href="/ielts" className="block text-black hover:text-blue-500">
-                <img src={ielts} alt="GRE" className="w-15 h-8 mx-auto" />
+                <img src={ielts} alt="IELTS" className="w-10 h-6 mx-auto" />
               </a>
               <a href="/gmat" className="block text-black hover:text-blue-500">
-                <img src={gmatmini} alt="GRE" className="w-15 h-12 mx-auto" />
+                <img src={gmatmini} alt="GMAT" className="w-10 h-6 mx-auto" />
               </a>
               <a href="/gre" className="block text-black hover:text-blue-500">
-                <img src={etsgre} alt="GRE" className="w-15 h-8 mx-auto" />
+                <img src={etsgre} alt="GRE" className="w-10 h-6 mx-auto" />
               </a>
               <a href="/toefl" className="block text-black hover:text-blue-500">
-                <img src={etstoefl} alt="GRE" className="w-15 h-8 mx-auto" />
+                <img src={etstoefl} alt="TOEFL" className="w-10 h-6 mx-auto" />
               </a>
               <a href="/duolingo" className="block text-black hover:text-blue-500">
-                <img src={duolingo} alt="GRE" className="w-15 h-10 mx-auto" />
+                <img src={duolingo} alt="Duolingo" className="w-10 h-6 mx-auto" />
               </a>
               <a href="/pte" className="block text-black hover:text-blue-500">
-                <img src={pearsonpte} alt="GRE" className="w-15 h-8 mx-auto" />
+                <img src={pearsonpte} alt="PTE" className="w-10 h-6 mx-auto" />
               </a>
             </div>
           )}
         </div>
 
         {/* Other Menu Items */}
-        <a href="/services" className="block text-black hover:text-blue-500 mt-4" style={{ color: "#0F3A5E", fontWeight: 'bold' }}>
+        <a
+          href="/services"
+          className="block text-black hover:text-blue-500 mt-4"
+          style={{ color: "#0F3A5E", fontWeight: "bold" }}
+        >
           Services
         </a>
-        <a href="/about" className="block text-black hover:text-blue-500 mt-4" style={{ color: "#0F3A5E", fontWeight: 'bold' }}>
+        <a
+          href="/about"
+          className="block text-black hover:text-blue-500 mt-4"
+          style={{ color: "#0F3A5E", fontWeight: "bold" }}
+        >
           About Us
         </a>
         <button
           className="block text-black hover:text-blue-500 mt-4"
-          style={{ color: "#0F3A5E", fontWeight: 'bold' }}
+          style={{ color: "#0F3A5E", fontWeight: "bold" }}
           onClick={handleFormToggle}
         >
           Register Now

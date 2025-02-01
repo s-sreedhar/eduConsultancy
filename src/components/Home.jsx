@@ -1,6 +1,7 @@
 import {React, useState} from "react";
 // import { useNavigate } from 'react-router-dom';
-import globe from '../assets/globe.png'
+// import globe from '../assets/globe.png'
+import world from '../assets/world.jpg'
 import { ReactTyped } from "react-typed";
 import RegistrationForm from "../utilities/RegistrationForm";
 import studenthome from '../assets/studenthome.png'
@@ -130,7 +131,7 @@ const Home = () => {
       <section className="relative h-screen">
         {/* Fullscreen Background Image */}
         <img
-          src={globe}
+          src={world}
           alt="Education"
           style={{dislay:'block'}}
           className="absolute inset-0 w-full h-full object-cover"
@@ -399,7 +400,7 @@ const Home = () => {
           ))}
         </div> */}
 
-<div className="grid grid-cols-5 gap-6 p-6">
+<div className="grid grid-cols-3 gap-6 p-6">
   {universities.flat().map((university, idx) => (
     <div
       key={idx}

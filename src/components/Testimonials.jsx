@@ -35,7 +35,7 @@ const Testimonials = () => {
     <section className="bg-gray-100 py-16 px-8">
       <div className="max-w-7xl mx-auto text-center" style={{cursor:'default'}}>
         <h2 className="text-3xl font-bold text-gray-800 mb-4" style={{cursor:'default'}}>
-          More than 10 K Students Trust us
+          Students trust us for Uncompromised Service
         </h2>
         <p className="text-gray-600 mb-8" style={{cursor:'default'}}>
           Our track record of triumphs speaks for itself.

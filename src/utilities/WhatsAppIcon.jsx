@@ -9,7 +9,7 @@ const WhatsAppIcon = () => {
       rel="noopener noreferrer"
       className="fixed bottom-4 right-4 bg-green-500 p-3 rounded-full shadow-lg text-white hover:bg-green-600 transition-transform transform hover:scale-110"
     >
-      <IoLogoWhatsapp size={20}/>
+      <IoLogoWhatsapp size={22}/>
     </a>
   );
 };
