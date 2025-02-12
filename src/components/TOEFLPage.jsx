@@ -1,4 +1,4 @@
-import React from "react";
+import {React, useState} from "react";
 import ieltseducation from '../assets/ieltseducation.png';
 import toeflscorecard from '../assets/toeflscorecard.png';
 // import { TfiBlackboard } from "react-icons/tfi";
@@ -7,8 +7,13 @@ import toeflscorecard from '../assets/toeflscorecard.png';
 // import { TfiWrite } from "react-icons/tfi";
 // import { IoShuffle } from "react-icons/io5";
 // import { FaRegPaperPlane } from "react-icons/fa6";
+import RegistrationForm from "../utilities/RegistrationForm";
 
 const TOEFLPage = () => {
+  const [showForm, setShowForm] = useState(false);
+  const handleFormToggle = () =>{
+    setShowForm(!showForm);
+  }
   return (
     <>
       <div>
@@ -20,7 +25,7 @@ const TOEFLPage = () => {
               <p className="mt-4">
                 Trust India's most trusted TOEFL mentors to equip you with the knowledge and expertise you need to succeed.
               </p>
-              <button className="mt-6 px-6 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-red-700" style={{backgroundColor:'#0F3A5E'}}>
+              <button className="mt-6 px-6 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-red-700" style={{backgroundColor:'#0F3A5E'}} onClick={handleFormToggle}>
                 Book FREE Demo Class
               </button>
             </div>
@@ -108,6 +113,21 @@ const TOEFLPage = () => {
           </div>
         </div>
       </div>
+         {/* Registration Form Modal */}
+         {showForm && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-20">
+            <div className="relative bg-white p-6 rounded-lg shadow-lg w-96">
+              {/* Close Button */}
+              <button
+                onClick={handleFormToggle}
+                className="absolute top-6 right-6 text-gray-500 hover:text-gray-700"
+              >
+                &times;
+              </button>
+              <RegistrationForm />
+            </div>
+          </div>
+        )}
     </>
   );
 };

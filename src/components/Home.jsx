@@ -157,7 +157,7 @@ const Home = () => {
             />
           </h1>
           <p className="text-lg md:text-xl mb-6" style={{cursor:'default'}}>
-           Fulfill your Study Abroad Dreams
+           <b>Fulfill your Study Abroad Dreams</b>
           </p>
           <div className="flex space-x-4">
             {/* Join Now Button */}
