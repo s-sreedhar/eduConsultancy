@@ -366,7 +366,7 @@ const App = () => {
         <button
           className="text-black hover:text-blue-500"
           style={{ color: "#0F3A5E" }}
-          onClick={() => alert("Register Now Clicked")}
+          onClick={handleFormToggle}
         >
           Register Now
         </button>
