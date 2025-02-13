@@ -7,7 +7,7 @@ const Copyright = () => {
         Copyright Policy
       </h1>
       <p className="text-gray-700 text-lg mb-4">
-        Welcome to CS Overseas Consultancy ! This copyright policy outlines the
+        Welcome to CS Overseas Consultancy! This copyright policy outlines the
         terms under which the content on our website is protected and how it
         can be used.
       </p>
@@ -19,7 +19,7 @@ const Copyright = () => {
         <p className="text-gray-700 mb-4">
           All content, including but not limited to text, images, graphics,
           logos, videos, and other materials, available on this website is the
-          exclusive property of [Your Consultancy Name] unless otherwise
+          exclusive property of CS Overseas Consultancy unless otherwise
           stated. This content is protected by applicable copyright laws and
           international treaties.
         </p>

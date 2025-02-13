@@ -38,7 +38,7 @@ const Testimonials = () => {
           Students trust us for Uncompromised Service
         </h2>
         <p className="text-gray-600 mb-8" style={{cursor:'default'}}>
-          Our track record of triumphs speaks for itself.
+          Our track record of triumphs speaks for itself
         </p>
         {/* <button className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-md mb-8">
           Witness our success stories

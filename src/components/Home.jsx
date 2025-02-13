@@ -52,12 +52,12 @@ const Home = () => {
       };
 
     const tests = [
-      { name: "IELTS", image: ielts },
-      { name: "GMAT", image: gmat },
-      { name: "GRE", image: etsgre },
-      { name: "TOEFL", image: etstoefl },
-      { name: "Duolingo", image: duolingo },
-      { name: "PTE", image: pearsonpte }
+      { name: "IELTS", image: ielts, link:'ielts' },
+      { name: "GMAT", image: gmat, link: 'gmat' },
+      { name: "GRE", image: etsgre, link:'gre' },
+      { name: "TOEFL", image: etstoefl, link:'toefl' },
+      { name: "Duolingo", image: duolingo, link:'duolingo' },
+      { name: "PTE", image: pearsonpte, link:'pte' }
     ];
   
     const universities = [
@@ -195,7 +195,7 @@ const Home = () => {
     
     <div className="text-center py-6">
       <h1 className="text-3xl font-bold mb-2" style={{cursor:'default'}}>One-Stop Destination for All Your Study Abroad Needs</h1>
-      <p className="text-lg text-gray-500" style={{cursor:'default'}}>We make your entire study abroad journey a grand success.</p>
+      <p className="text-lg text-gray-500" style={{cursor:'default'}}>We make your entire study abroad journey a grand success</p>
     </div>
     
     <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 p-4">
@@ -438,11 +438,13 @@ const Home = () => {
             key={index}
             className="flex justify-center items-center border border-gray-300 shadow-md rounded-lg p-4 bg-white hover:shadow-lg transition"
           >
-            <img
-              src={test.image}
-              alt={test.name}
-              className="h-16 w-auto object-contain"
-            />
+           <a href={test.link} target="_blank" rel="noopener noreferrer"> 
+          <img 
+          src={test.image} 
+          alt={test.name} 
+          className="h-16 w-auto object-contain" 
+          />
+          </a>
           </div>
         ))}
       </div>

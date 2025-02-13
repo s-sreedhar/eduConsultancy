@@ -43,7 +43,7 @@ const FAQ = () => {
     Frequently Asked Questions
   </h2>
   {faqs.map((faq, index) => (
-    <div key={index} className="mb-4 border-b-2 border-blue-500">
+    <div key={index} className="mb-4 border-b-2 border-blue-950">
       <button
         onClick={() => toggleExpand(index)}
         className="w-full flex justify-between items-center py-2 text-left text-lg font-medium text-gray-800"

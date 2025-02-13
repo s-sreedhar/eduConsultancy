@@ -1,7 +1,7 @@
 import {  FaFacebook, FaInstagram, FaGoogle } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 const Footer = () => {
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
     return (
         <footer className="bg-blue-500 text-white py-10" style={{backgroundColor:'#0F3A5E'}}>
   <div className="container mx-auto px-4">
@@ -51,7 +51,7 @@ const Footer = () => {
           <li><a href="#" className="hover:underline">Blogs</a></li> */}
           <li><a href="https://wa.me/7997222217" className="hover:underline">Contact Us</a></li>
           <li><a href="https://wa.me/7997222217" className="hover:underline">Feedback</a></li>
-          {/* <li><a href="" className="hover:underline">Privacy Policy</a></li> */}
+          <li><a href="/copyright" className="hover:underline">Privacy Policy</a></li>
           {/* <li><a href="#" className="hover:underline">Terms & Conditions</a></li> */}
           {/* <li><a href="#" className="hover:underline">Careers</a></li> */}
         </ul>
@@ -121,7 +121,7 @@ const Footer = () => {
     </div>
 
     {/* Copyright */}
-    <div className="mt-10 text-center text-sm" style={{cursor:'default'}} onClick={() => navigate("/copyright")}>
+    <div className="mt-10 text-center text-sm" style={{cursor:'default'}}>
       © Copyright CS Overseas 2025. All rights reserved.
     </div>
   </div>
